@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunder Apps Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Thunder Apps Studio</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Use</a></li>
+        </ul>
+    </nav>
+    <main id="content">
+        <!-- Content will be dynamically loaded here -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Thunder Apps Studio. All rights reserved.</p>
+    </footer>
+    <script>
+        // Simple routing system
+        const routes = {
+            home: `
+                <h2>Welcome to Thunder Apps Studio</h2>
+                <p>We create innovative mobile and web applications to solve real-world problems.</p>
+            `,
+            about: `
+                <h2>About Us</h2>
+                <p>Thunder Apps Studio is a leading software development company specializing in cutting-edge mobile and web applications.</p>
+            `,
+            products: `
+                <h2>Our Products</h2>
+                <ul>
+                    <li>ThunderChat - Secure Messaging App</li>
+                    <li>ThunderTask - Productivity Suite</li>
+                    <li>ThunderPlay - Mobile Gaming Platform</li>
+                </ul>
+            `,
+            career: `
+                <h2>Career Opportunities</h2>
+                <p>Join our dynamic team! We're always looking for talented developers, designers, and project managers.</p>
+            `,
+            contact: `
+                <h2>Contact Us</h2>
+                <p>Email: info@thunderapps.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Tech Street, App City, 12345</p>
+            `,
+            privacy: `
+                <h2>Privacy Policy</h2>
+                <p>At Thunder Apps Studio, we take your privacy seriously. This policy outlines how we collect, use, and protect your personal information.</p>
+            `,
+            terms: `
+                <h2>Terms of Use</h2>
+                <p>By using Thunder Apps Studio's products and services, you agree to comply with and be bound by the following terms and conditions of use.</p>
+            `
+        };
+
+        function navigate(route) {
+            const content = document.getElementById('content');
+            content.innerHTML = routes[route] || routes.home;
+        }
+
+        // Initial load
+        navigate('home');
+
+        // Add click event listeners to navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const route = e.target.getAttribute('href').substring(1);
+                navigate(route);
+            });
+        });
+    </script>
+</body>
+</html>

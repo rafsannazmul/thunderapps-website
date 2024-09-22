@@ -72,6 +72,29 @@ a:hover {
   text-decoration: underline;
 }
 
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.apply {
+    margin-top: 20px;
+    text-align: center;
+}
+.apply a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.apply a:hover {
+    background-color: #0056b3;
+}
+
 /* Section styling */
 section {
   background-color: #fff;

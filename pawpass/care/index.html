@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Care sheet · PawPass</title>
+  <style>
+    :root { --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea; --bg:#fbfaf7; --card:#fff; --alert:#c0392b; --alert-bg:#fdecea; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink:#f5f5f7; --muted:#a1a1a6; --line:#38383a; --bg:#111; --card:#1c1c1e; --alert:#ff6b5e; --alert-bg:#3a1d1a; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font:16px/1.5 -apple-system, system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:640px; margin:0 auto; padding:24px 16px 48px; }
+    h1 { font-size:28px; margin:0 0 4px; }
+    h2 { font-size:15px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:28px 0 8px; }
+    .sub { color:var(--muted); margin:0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; }
+    .alerts { background:var(--alert-bg); border-color:var(--alert); color:var(--alert); font-weight:600; }
+    ul { margin:0; padding-left:20px; }
+    a { color:inherit; }
+    .state { text-align:center; padding:80px 16px; color:var(--muted); }
+    footer { margin-top:40px; font-size:13px; color:var(--muted); text-align:center; }
+    @media print { body { background:#fff; } .card { border-color:#ccc; } footer { display:none; } }
+  </style>
+</head>
+<body>
+  <main id="app"><p class="state">Loading care sheet…</p></main>
+  <script>
+    // Your Firebase project ID (Firebase Console → Project settings → General).
+    const PROJECT_ID = "pawpass-659a8";
+
+    const app = document.getElementById("app");
+    const shareId = new URLSearchParams(location.search).get("id") || "";
+
+    // Escape everything that came from the database before putting it in HTML.
+    const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const list = (items, fmt = esc) => items && items.length
+      ? `<div class="card"><ul>${items.map((i) => `<li>${fmt(i)}</li>`).join("")}</ul></div>` : "";
+    const section = (title, body) => body ? `<h2>${title}</h2>${body}` : "";
+    // Entries are objects whose shape lives in the iOS models; print their values.
+    const entry = (e) => typeof e === "object" && e
+      ? Object.values(e).filter((v) => v !== null && v !== "").map(esc).join(" · ") : esc(e);
+
+    // Firestore's REST API wraps every value in its type: {stringValue: "Rex"}, {arrayValue: …}.
+    function decode(v) {
+      if (!v) return null;
+      if ("stringValue" in v) return v.stringValue;
+      if ("integerValue" in v) return Number(v.integerValue);
+      if ("doubleValue" in v) return v.doubleValue;
+      if ("booleanValue" in v) return v.booleanValue;
+      if ("timestampValue" in v) return v.timestampValue;
+      if ("arrayValue" in v) return (v.arrayValue.values || []).map(decode);
+      if ("mapValue" in v) {
+        return Object.fromEntries(Object.entries(v.mapValue.fields || {}).map(([k, x]) => [k, decode(x)]));
+      }
+      return null;
+    }
+
+    function showState(message) {
+      app.innerHTML = `<p class="state">${esc(message)}</p>`;
+    }
+
+    function render(p, expiresAt) {
+      document.title = `${p.name} · Care sheet`;
+      const contacts = (p.emergencyContacts || []).map((c) =>
+        `${esc(c.name)}${c.phone ? ` · <a href="tel:${esc(c.phone)}">${esc(c.phone)}</a>` : ""}`);
+      const vet = p.vet && Object.values(p.vet).some(Boolean) ? `<div class="card">${entry(p.vet)}</div>` : "";
+      app.innerHTML = `
+        <h1>${esc(p.name)}</h1>
+        <p class="sub">${esc([p.species, p.breed].filter(Boolean).join(" · "))}</p>
+        ${p.criticalAlerts && p.criticalAlerts.length
+          ? `<h2>Read first</h2><div class="card alerts"><ul>${p.criticalAlerts.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div>` : ""}
+        ${section("Feeding", list(p.feeding, entry))}
+        ${section("Medication", list(p.medication, entry))}
+        ${section("Walks", list(p.walkSchedule, entry))}
+        ${section("Behavior", list(p.behavior))}
+        ${section("House rules", list(p.houseRules))}
+        ${section("Vet", vet)}
+        ${section("Emergency contacts", list(contacts, (x) => x))}
+        <footer>Shared with PawPass · link active until ${new Date(expiresAt).toLocaleDateString()}</footer>`;
+    }
+
+    // Security rules allow reading one active, unexpired sheet by its ID and nothing else,
+    // so a revoked, expired or made-up ID all come back as 403/404.
+    const GONE = "This link is no longer active. Ask the pet's owner for a new one.";
+    if (!/^[23456789abcdefghjkmnpqrstuvwxyz]{12}$/.test(shareId)) {
+      showState(GONE);
+    } else {
+      fetch(`https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/careSheets/${shareId}`)
+        .then((r) => {
+          if (r.status === 403 || r.status === 404) throw new Error("gone");
+          if (!r.ok) throw new Error("network");
+          return r.json();
+        })
+        .then((doc) => {
+          const sheet = decode({ mapValue: { fields: doc.fields } });
+          render(sheet.snapshot, sheet.expiresAt);
+        })
+        .catch((e) => showState(e.message === "gone" ? GONE
+          : "Couldn't load the care sheet. Check your connection and refresh."));
+    }
+  </script>
+</body>
+</html>

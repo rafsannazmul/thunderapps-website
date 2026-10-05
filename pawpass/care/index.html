@@ -25,9 +25,8 @@
 
   <script>
     // ─── Config ──────────────────────────────────────────────────────────────────────────
-    // Firebase project + bucket (Firebase Console → Project settings → General).
+    // Firebase project (Firebase Console → Project settings → General).
     const PROJECT_ID = "pawpass-659a8";
-    const BUCKET = "pawpass-659a8.firebasestorage.app";
     // Numeric App Store ID, e.g. "6741387189". Empty until PawPass is live: the download
     // button then reads "Coming soon" and the Safari Smart App Banner stays off.
     const APP_STORE_ID = "";
@@ -301,6 +300,7 @@
       if ("doubleValue" in v) return v.doubleValue;
       if ("booleanValue" in v) return v.booleanValue;
       if ("timestampValue" in v) return v.timestampValue;
+      if ("bytesValue" in v) return v.bytesValue; // base64 — used for the inline photo
       if ("nullValue" in v) return null;
       if ("arrayValue" in v) return (v.arrayValue.values || []).map(decode);
       if ("mapValue" in v) {
@@ -358,11 +358,11 @@
     function photoBlock(p) {
       const sp = SPECIES[p.species] || SPECIES.other;
       const fallback = ICON.paw;
-      // Per-link copy, served only while the link is active (storage.rules). The ID is
-      // validated before we get here, so it is safe to put in the URL as-is.
-      const src = `https://firebasestorage.googleapis.com/v0/b/${BUCKET}/o/${encodeURIComponent(`careSheets/${shareId}/photo.jpg`)}?alt=media`;
-      const img = p.hasPhoto
-        ? `<img src="${src}" alt="Photo of ${esc(p.name)}" onerror="this.parentNode.innerHTML = window.__pawFallback">`
+      // Per-link copy stored inside the sheet itself (snapshot.photo, base64 JPEG), so it is
+      // only readable while the link is active. Only base64 characters are allowed through.
+      const photo = typeof p.photo === "string" && /^[A-Za-z0-9+/=]+$/.test(p.photo) ? p.photo : null;
+      const img = photo
+        ? `<img src="data:image/jpeg;base64,${photo}" alt="Photo of ${esc(p.name)}" onerror="this.parentNode.innerHTML = window.__pawFallback">`
         : fallback;
       window.__pawFallback = fallback;
       return `<div class="photo" style="--species:${sp.color}">${img}</div>`;

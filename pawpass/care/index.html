@@ -2,48 +2,296 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="referrer" content="no-referrer">
   <meta name="robots" content="noindex">
-  <title>Care sheet · PawPass</title>
-  <style>
-    :root { --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea; --bg:#fbfaf7; --card:#fff; --alert:#c0392b; --alert-bg:#fdecea; }
-    @media (prefers-color-scheme: dark) {
-      :root { --ink:#f5f5f7; --muted:#a1a1a6; --line:#38383a; --bg:#111; --card:#1c1c1e; --alert:#ff6b5e; --alert-bg:#3a1d1a; }
+  <meta name="theme-color" content="#0B3D52">
+  <title>Pet care sheet · PawPass</title>
+
+  <!-- Link previews (iMessage, WhatsApp). Static on purpose: the pet's data loads client-side,
+       so a crawler only ever sees this generic card — which also keeps names out of previews. -->
+  <meta property="og:site_name" content="PawPass">
+  <meta property="og:title" content="A pet care sheet was shared with you">
+  <meta property="og:description" content="Feeding, meds, walks, vet and emergency contacts — everything a sitter needs, in one place.">
+  <meta property="og:image" content="https://thunderapps.xyz/pawpass/assets/og-card.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/icon-96.png">
+  <link rel="apple-touch-icon" href="../assets/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    // ─── Config ──────────────────────────────────────────────────────────────────────────
+    // Firebase project + bucket (Firebase Console → Project settings → General).
+    const PROJECT_ID = "pawpass-659a8";
+    const BUCKET = "pawpass-659a8.firebasestorage.app";
+    // Numeric App Store ID, e.g. "6741387189". Empty until PawPass is live: the download
+    // button then reads "Coming soon" and the Safari Smart App Banner stays off.
+    const APP_STORE_ID = "";
+    // Must match CareSheetAddress.appScheme in the iOS app (and CFBundleURLSchemes).
+    const APP_SCHEME = "pawpass";
+
+    const shareId = new URLSearchParams(location.search).get("id") || "";
+    const APP_STORE_URL = APP_STORE_ID ? `https://apps.apple.com/app/id${APP_STORE_ID}` : "";
+
+    // Safari's Smart App Banner: "Open" if installed, "Get" if not. Added before <body> parses
+    // so Safari sees it. app-argument is handed to the app (onOpenURL) when opened from it.
+    if (APP_STORE_ID) {
+      const m = document.createElement("meta");
+      m.name = "apple-itunes-app";
+      m.content = `app-id=${APP_STORE_ID}, app-argument=${APP_SCHEME}://care?id=${encodeURIComponent(shareId)}`;
+      document.head.appendChild(m);
     }
-    * { box-sizing: border-box; }
-    body { margin:0; font:16px/1.5 -apple-system, system-ui, sans-serif; color:var(--ink); background:var(--bg); }
-    main { max-width:640px; margin:0 auto; padding:24px 16px 48px; }
-    h1 { font-size:28px; margin:0 0 4px; }
-    h2 { font-size:15px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:28px 0 8px; }
-    .sub { color:var(--muted); margin:0; }
-    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; }
-    .alerts { background:var(--alert-bg); border-color:var(--alert); color:var(--alert); font-weight:600; }
-    ul { margin:0; padding-left:20px; }
+  </script>
+
+  <style>
+    /* Tokens mirror Theme.Brand / Theme.Palette in the iOS app. */
+    :root {
+      --deep-teal:#0B3D52; --teal:#17B3A8; --mint:#5ED3C0; --sky:#7EC8FF;
+      --yellow:#FFC15A; --pink:#FF8FA3; --cream:#F8FAF7;
+
+      --bg:#E7F3F1; --surface:#F8FAF7; --ink:#0B3D52; --ink-2:#4C6F7D; --ink-3:#7C9BA7;
+      --line:#C9E1DC; --accent:#0C8076; --on-accent:#F8FAF7; --chip:#DCEFEB;
+      --danger:#C7362F; --danger-wash:#FBE9E7; --shadow:0 4px 18px rgba(11,61,82,.08);
+      --feed:#C98A1E; --feed-wash:#FFF1D6; --meds:#B4405A; --meds-wash:#FFE4EA;
+      --walk:#2C78B8; --walk-wash:#E0F0FF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#07293A; --surface:#0B3D52; --ink:#F8FAF7; --ink-2:#A9C6D0; --ink-3:#77949F;
+        --line:#1B5468; --accent:#5ED3C0; --on-accent:#08303F; --chip:#11485D;
+        --danger:#FF6B61; --danger-wash:#3A1D22; --shadow:0 4px 18px rgba(0,0,0,.25);
+        --feed:#FFC15A; --feed-wash:#3B3320; --meds:#FF8FA3; --meds-wash:#3D2330;
+        --walk:#7EC8FF; --walk-wash:#16384F;
+      }
+    }
+
+    * { box-sizing:border-box; }
+    html { -webkit-text-size-adjust:100%; }
+    body {
+      margin:0; background:var(--bg); color:var(--ink);
+      font:16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .rounded { font-family: ui-rounded, "SF Pro Rounded", "Nunito", -apple-system, system-ui, sans-serif; }
     a { color:inherit; }
-    .state { text-align:center; padding:80px 16px; color:var(--muted); }
-    footer { margin-top:40px; font-size:13px; color:var(--muted); text-align:center; }
-    @media print { body { background:#fff; } .card { border-color:#ccc; } footer { display:none; } }
+    img { display:block; }
+
+    /* ─── Brand bar ─── */
+    .brandbar {
+      position:relative; background:var(--deep-teal); color:var(--cream);
+      padding:calc(14px + env(safe-area-inset-top)) 16px 110px;
+      overflow:hidden;
+    }
+    /* Faint paw prints, like the app icon's background. */
+    .brandbar::before {
+      content:""; position:absolute; inset:0; opacity:.09; pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='%235ED3C0'%3E%3Cellipse cx='22' cy='30' rx='8' ry='7'/%3E%3Ccircle cx='13' cy='19' r='3.2'/%3E%3Ccircle cx='19.5' cy='14' r='3.2'/%3E%3Ccircle cx='26.5' cy='14' r='3.2'/%3E%3Ccircle cx='32' cy='19.5' r='3.2'/%3E%3Cg transform='translate(44 44) rotate(-18)'%3E%3Cellipse cx='22' cy='30' rx='8' ry='7'/%3E%3Ccircle cx='13' cy='19' r='3.2'/%3E%3Ccircle cx='19.5' cy='14' r='3.2'/%3E%3Ccircle cx='26.5' cy='14' r='3.2'/%3E%3Ccircle cx='32' cy='19.5' r='3.2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .brandbar-inner { position:relative; max-width:680px; margin:0 auto; display:flex; align-items:center; gap:10px; }
+    .brandbar img { width:36px; height:36px; border-radius:9px; box-shadow:0 0 0 1.5px rgba(94,211,192,.6); }
+    .wordmark { font-weight:900; font-size:22px; letter-spacing:-.01em; }
+    .wordmark span { color:var(--mint); }
+    .brandbar .get {
+      margin-left:auto; text-decoration:none; font-weight:700; font-size:14px;
+      padding:7px 14px; border-radius:999px; background:rgba(248,250,247,.12);
+      border:1px solid rgba(94,211,192,.45); color:var(--cream); white-space:nowrap;
+    }
+
+    main { max-width:680px; margin:-50px auto 0; padding:0 16px 40px; position:relative; }
+
+    /* ─── Hero ─── */
+    .card { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); }
+    .hero { padding:20px 20px 22px; text-align:center; }
+    .photo {
+      width:136px; height:136px; margin:-80px auto 12px; border-radius:50%;
+      border:5px solid var(--surface); box-shadow:0 0 0 3px var(--mint), var(--shadow);
+      background:var(--species, var(--sky)); overflow:hidden; display:grid; place-items:center;
+    }
+    .photo img { width:100%; height:100%; object-fit:cover; }
+    .photo svg { width:58%; height:58%; color:var(--deep-teal); opacity:.85; }
+    .doclabel { font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0; }
+    h1 { font-size:34px; line-height:1.1; font-weight:900; margin:4px 0 10px; letter-spacing:-.01em; overflow-wrap:anywhere; }
+    .chips { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin:0; padding:0; list-style:none; }
+    .chip { background:var(--chip); color:var(--ink); font-size:14px; font-weight:600; padding:4px 12px; border-radius:999px; }
+
+    /* ─── Quick call actions ─── */
+    .quick { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; margin-top:14px; }
+    .btn {
+      display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px;
+      padding:10px 16px; border-radius:14px; font-weight:800; font-size:16px; text-decoration:none;
+      border:0; cursor:pointer; font-family:inherit;
+    }
+    .btn svg { width:20px; height:20px; flex:none; }
+    .btn-primary { background:var(--accent); color:var(--on-accent); }
+    .btn-secondary { background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); }
+    .btn-dark { background:#000; color:#fff; }
+    .btn[aria-disabled="true"] { opacity:.55; pointer-events:none; }
+
+    /* ─── Sections ─── */
+    section { margin-top:22px; }
+    h2 {
+      display:flex; align-items:center; gap:8px; margin:0 0 8px 4px;
+      font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2);
+    }
+    h2 .ico { font-size:16px; letter-spacing:0; }
+    .pad { padding:6px 16px; }
+    ul.bullets { margin:0; padding:10px 0 10px 20px; }
+    ul.bullets li { padding:3px 0; }
+    ul.bullets li::marker { color:var(--accent); }
+
+    /* Critical alerts: red AND boxed AND labelled AND ▲ — never colour alone (ADR 0007). */
+    .alerts { border:2px solid var(--danger); background:var(--danger-wash); border-radius:16px; padding:14px 16px; }
+    .alerts h2 { color:var(--danger); margin:0 0 6px; }
+    .alerts ul { margin:0; padding:0; list-style:none; }
+    .alerts li { display:flex; gap:10px; font-weight:700; padding:4px 0; }
+    .alerts li::before { content:"▲"; color:var(--danger); font-size:12px; line-height:1.9; }
+
+    /* Daily routine timeline */
+    .row { display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); align-items:flex-start; }
+    .row:last-child { border-bottom:0; }
+    .time { width:76px; flex:none; font-weight:800; font-variant-numeric:tabular-nums; padding-top:1px; }
+    .time.any { color:var(--ink-3); font-weight:700; font-size:14px; }
+    .what { flex:1; min-width:0; }
+    .what strong { display:block; font-weight:700; overflow-wrap:anywhere; }
+    .what .note { color:var(--ink-2); font-size:14px; margin-top:2px; overflow-wrap:anywhere; }
+    .tag { flex:none; font-size:11px; font-weight:900; letter-spacing:.08em; padding:3px 8px; border-radius:6px; margin-top:2px; }
+    .tag.feed { color:var(--feed); background:var(--feed-wash); }
+    .tag.meds { color:var(--meds); background:var(--meds-wash); }
+    .tag.walk { color:var(--walk); background:var(--walk-wash); }
+
+    /* Contacts */
+    .contact { display:flex; align-items:center; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); }
+    .contact:last-child { border-bottom:0; }
+    .avatar {
+      width:42px; height:42px; border-radius:50%; flex:none; display:grid; place-items:center;
+      background:var(--chip); color:var(--accent); font-weight:900; font-size:17px;
+    }
+    .contact .who { flex:1; min-width:0; }
+    .contact .who strong { display:block; overflow-wrap:anywhere; }
+    .contact .who span { display:block; color:var(--ink-2); font-size:14px; }
+    .contact .num { display:block; font-weight:800; font-size:17px; font-variant-numeric:tabular-nums; text-decoration:none; color:var(--ink); margin-top:2px; }
+    .call {
+      flex:none; display:flex; align-items:center; gap:6px; text-decoration:none; font-weight:800;
+      font-variant-numeric:tabular-nums; color:var(--on-accent); background:var(--accent);
+      padding:8px 14px; border-radius:999px; font-size:15px;
+    }
+    .call svg { width:16px; height:16px; }
+    .vet-lines { padding:4px 0 12px; color:var(--ink-2); font-size:15px; }
+    .vet-lines a { color:var(--accent); font-weight:600; }
+
+    /* ─── App promo ─── */
+    .promo {
+      margin-top:32px; padding:22px 20px; border-radius:22px; color:var(--cream);
+      background:radial-gradient(120% 140% at 100% 0%, #17B3A8 0%, #0B3D52 55%);
+      display:grid; grid-template-columns:1fr; gap:10px; text-align:center; overflow:hidden;
+    }
+    .promo img { width:150px; height:auto; margin:0 auto -4px; filter:drop-shadow(0 8px 16px rgba(0,0,0,.25)); }
+    .promo h3 { font-size:24px; font-weight:900; margin:0; line-height:1.2; }
+    .promo p { margin:0; color:rgba(248,250,247,.85); }
+    .promo .actions { display:grid; gap:10px; margin-top:6px; }
+    .promo .btn-primary { background:var(--mint); color:#08303F; }
+    .promo .btn-secondary { background:transparent; color:var(--cream); border-color:rgba(248,250,247,.55); }
+    .promo .hint { font-size:13px; color:rgba(248,250,247,.75); min-height:1em; }
+    @media (min-width:560px) {
+      .promo { grid-template-columns:170px 1fr; text-align:left; align-items:center; padding:26px 28px; }
+      .promo img { grid-row:span 4; width:170px; margin:0; }
+      .promo .actions { grid-template-columns:1fr 1fr; }
+    }
+
+    footer { margin:24px 0 0; text-align:center; font-size:13px; color:var(--ink-3); }
+    footer .print { background:none; border:0; color:var(--accent); font:inherit; font-weight:700; cursor:pointer; text-decoration:underline; }
+
+    /* ─── States ─── */
+    .state { padding:28px 20px 30px; text-align:center; }
+    .state-icon { width:76px; height:76px; margin:0 auto 10px; border-radius:50%; display:grid; place-items:center; background:var(--chip); color:var(--accent); }
+    .state-icon svg { width:40px; height:40px; }
+    .state h1 { font-size:24px; }
+    .state p { color:var(--ink-2); margin:0 auto; max-width:380px; }
+    .skel { border-radius:10px; background:linear-gradient(90deg, var(--chip) 25%, var(--line) 50%, var(--chip) 75%); background-size:200% 100%; animation:shimmer 1.3s infinite linear; }
+    @keyframes shimmer { to { background-position:-200% 0; } }
+    @media (prefers-reduced-motion: reduce) { .skel { animation:none; } }
+
+    /* ─── Print: a clean sheet, no app chrome ─── */
+    @media print {
+      .call { display:none; }
+      :root { --bg:#fff; --surface:#fff; --ink:#111; --ink-2:#444; --line:#ccc; --chip:#eee; --shadow:none; }
+      body { background:#fff; }
+      .brandbar { background:none; color:#111; padding:0 0 8px; }
+      .brandbar::before, .brandbar .get, .promo, .quick, footer .print { display:none; }
+      main { margin-top:0; }
+      .photo { margin-top:0; }
+      .card, .alerts { break-inside:avoid; }
+    }
   </style>
 </head>
 <body>
-  <main id="app"><p class="state">Loading care sheet…</p></main>
+  <header class="brandbar">
+    <div class="brandbar-inner">
+      <img src="../assets/icon-96.png" alt="" width="36" height="36">
+      <div class="wordmark rounded">Paw<span>Pass</span></div>
+      <a class="get" id="get-top" href="#get-app">Get the app</a>
+    </div>
+  </header>
+
+  <main id="app" aria-live="polite">
+    <div class="card hero" aria-busy="true">
+      <div class="photo skel" style="border-color:var(--surface)"></div>
+      <div class="skel" style="height:14px;width:120px;margin:0 auto 10px"></div>
+      <div class="skel" style="height:34px;width:200px;margin:0 auto 12px"></div>
+      <div class="skel" style="height:24px;width:240px;margin:0 auto"></div>
+      <span class="sr-only" style="position:absolute;left:-9999px">Loading care sheet…</span>
+    </div>
+  </main>
+
   <script>
-    // Your Firebase project ID (Firebase Console → Project settings → General).
-    const PROJECT_ID = "pawpass-659a8";
-
     const app = document.getElementById("app");
-    const shareId = new URLSearchParams(location.search).get("id") || "";
 
+    // ─── Helpers ─────────────────────────────────────────────────────────────────────────
     // Escape everything that came from the database before putting it in HTML.
     const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-    const list = (items, fmt = esc) => items && items.length
-      ? `<div class="card"><ul>${items.map((i) => `<li>${fmt(i)}</li>`).join("")}</ul></div>` : "";
-    const section = (title, body) => body ? `<h2>${title}</h2>${body}` : "";
-    // Entries are objects whose shape lives in the iOS models; print their values.
-    const entry = (e) => typeof e === "object" && e
-      ? Object.values(e).filter((v) => v !== null && v !== "").map(esc).join(" · ") : esc(e);
+    const has = (v) => v !== null && v !== undefined && String(v).trim() !== "";
+    const telHref = (p) => "tel:" + String(p).replace(/[^\d+]/g, "");
+
+    const ICON = {
+      phone: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>',
+      paw: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="16.2" rx="5" ry="4.3"/><circle cx="5.2" cy="10.4" r="2.2"/><circle cx="9.2" cy="6.6" r="2.3"/><circle cx="14.8" cy="6.6" r="2.3"/><circle cx="18.8" cy="10.4" r="2.2"/></svg>',
+      download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>',
+      open: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+    };
+    const SPECIES = {
+      dog: { label: "Dog", color: "var(--yellow)" },
+      cat: { label: "Cat", color: "var(--pink)" },
+      other: { label: "Pet", color: "var(--sky)" },
+    };
+
+    // "08:00" is a local wall-clock time, not a moment (ADR 0002): format it for the reader's
+    // locale without ever going through a time zone.
+    function parseTime(t) {
+      const m = /^\s*(\d{1,2}):(\d{2})\s*$/.exec(t || "");
+      if (!m || +m[1] > 23 || +m[2] > 59) return null;
+      return { minutes: +m[1] * 60 + +m[2], label: new Date(2000, 0, 1, +m[1], +m[2])
+        .toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) };
+    }
+
+    function ageFrom(iso) {
+      const born = iso ? new Date(iso) : null;
+      if (!born || isNaN(born)) return "";
+      const now = new Date();
+      let months = (now.getFullYear() - born.getFullYear()) * 12 + now.getMonth() - born.getMonth();
+      if (now.getDate() < born.getDate()) months--;
+      if (months < 0) return "";
+      if (months < 12) return months <= 1 ? "Under 2 months" : `${months} months`;
+      const y = Math.floor(months / 12);
+      return `${y} ${y === 1 ? "year" : "years"} old`;
+    }
+    const shortDate = (iso) => {
+      const d = iso ? new Date(iso) : null;
+      return d && !isNaN(d) ? d.toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" }) : "";
+    };
 
     // Firestore's REST API wraps every value in its type: {stringValue: "Rex"}, {arrayValue: …}.
     function decode(v) {
@@ -53,6 +301,7 @@
       if ("doubleValue" in v) return v.doubleValue;
       if ("booleanValue" in v) return v.booleanValue;
       if ("timestampValue" in v) return v.timestampValue;
+      if ("nullValue" in v) return null;
       if ("arrayValue" in v) return (v.arrayValue.values || []).map(decode);
       if ("mapValue" in v) {
         return Object.fromEntries(Object.entries(v.mapValue.fields || {}).map(([k, x]) => [k, decode(x)]));
@@ -60,35 +309,175 @@
       return null;
     }
 
-    function showState(message) {
-      app.innerHTML = `<p class="state">${esc(message)}</p>`;
+    // ─── Building blocks ─────────────────────────────────────────────────────────────────
+    const section = (icon, title, body) => body
+      ? `<section><h2><span class="ico" aria-hidden="true">${icon}</span>${title}</h2>${body}</section>` : "";
+    const bullets = (items) => (items || []).filter(has).length
+      ? `<div class="card pad"><ul class="bullets">${items.filter(has).map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>` : "";
+
+    // Feeding, meds and walks merged into one day, in time order — the same shape as the
+    // printed passport's routine table (DailyRoutine.swift). Unparseable times go last.
+    function routine(p) {
+      const rows = [
+        ...(p.feeding || []).map((f) => ({ kind: "feed", tag: "FEED", time: f.time,
+          title: [f.food, f.amount].filter(has).join(" · ") || "Feed", note: f.notes })),
+        ...(p.medication || []).map((m) => ({ kind: "meds", tag: "MEDS", time: m.time,
+          title: [m.name, m.dosage].filter(has).join(" · ") || "Medication", note: m.notes })),
+        ...(p.walkSchedule || []).map((w) => ({ kind: "walk", tag: "WALK", time: w.time,
+          title: has(w.duration) ? `Walk · ${w.duration}` : "Walk", note: w.notes })),
+      ].map((r) => ({ ...r, parsed: parseTime(r.time) }))
+       .sort((a, b) => (a.parsed ? a.parsed.minutes : 1e4) - (b.parsed ? b.parsed.minutes : 1e4));
+      if (!rows.length) return "";
+      return `<div class="card pad">${rows.map((r) => `
+        <div class="row">
+          <div class="time ${r.parsed ? "" : "any"}">${r.parsed ? esc(r.parsed.label) : "Any time"}</div>
+          <div class="what"><strong>${esc(r.title)}</strong>${has(r.note) ? `<div class="note">${esc(r.note)}</div>` : ""}</div>
+          <span class="tag ${r.kind}">${r.tag}</span>
+        </div>`).join("")}</div>`;
     }
 
-    function render(p, expiresAt) {
-      document.title = `${p.name} · Care sheet`;
-      const contacts = (p.emergencyContacts || []).map((c) =>
-        `${esc(c.name)}${c.phone ? ` · <a href="tel:${esc(c.phone)}">${esc(c.phone)}</a>` : ""}`);
-      const vet = p.vet && Object.values(p.vet).some(Boolean) ? `<div class="card">${entry(p.vet)}</div>` : "";
-      app.innerHTML = `
-        <h1>${esc(p.name)}</h1>
-        <p class="sub">${esc([p.species, p.breed].filter(Boolean).join(" · "))}</p>
-        ${p.criticalAlerts && p.criticalAlerts.length
-          ? `<h2>Read first</h2><div class="card alerts"><ul>${p.criticalAlerts.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div>` : ""}
-        ${section("Feeding", list(p.feeding, entry))}
-        ${section("Medication", list(p.medication, entry))}
-        ${section("Walks", list(p.walkSchedule, entry))}
-        ${section("Behavior", list(p.behavior))}
-        ${section("House rules", list(p.houseRules))}
-        ${section("Vet", vet)}
-        ${section("Emergency contacts", list(contacts, (x) => x))}
-        <footer>Shared with PawPass · link active until ${new Date(expiresAt).toLocaleDateString()}</footer>`;
+    function contactRow(name, sub, phone) {
+      const initial = esc((String(name || "?").trim()[0] || "?").toUpperCase());
+      return `<div class="contact">
+        <div class="avatar" aria-hidden="true">${initial}</div>
+        <div class="who"><strong>${esc(name || "Contact")}</strong>${has(sub) ? `<span>${esc(sub)}</span>` : ""}
+          ${has(phone) ? `<a class="num" href="${esc(telHref(phone))}">${esc(phone)}</a>` : ""}</div>
+        ${has(phone) ? `<a class="call" href="${esc(telHref(phone))}" aria-label="Call ${esc(name || "this contact")}">${ICON.phone}Call</a>` : ""}
+      </div>`;
     }
+
+    function vetCard(v) {
+      if (!v || ![v.name, v.phone, v.address, v.notes].some(has)) return "";
+      const lines = [
+        has(v.address) ? `<div><a href="https://maps.apple.com/?q=${encodeURIComponent(v.address)}" target="_blank" rel="noopener">${esc(v.address)}</a></div>` : "",
+        has(v.notes) ? `<div>${esc(v.notes)}</div>` : "",
+      ].join("");
+      return `<div class="card pad">${contactRow(v.name || "Vet", "Veterinarian", v.phone)}${lines ? `<div class="vet-lines">${lines}</div>` : ""}</div>`;
+    }
+
+    function photoBlock(p) {
+      const sp = SPECIES[p.species] || SPECIES.other;
+      const fallback = ICON.paw;
+      // Per-link copy, served only while the link is active (storage.rules). The ID is
+      // validated before we get here, so it is safe to put in the URL as-is.
+      const src = `https://firebasestorage.googleapis.com/v0/b/${BUCKET}/o/${encodeURIComponent(`careSheets/${shareId}/photo.jpg`)}?alt=media`;
+      const img = p.hasPhoto
+        ? `<img src="${src}" alt="Photo of ${esc(p.name)}" onerror="this.parentNode.innerHTML = window.__pawFallback">`
+        : fallback;
+      window.__pawFallback = fallback;
+      return `<div class="photo" style="--species:${sp.color}">${img}</div>`;
+    }
+
+    function promo({ openInApp = true } = {}) {
+      return `
+        <aside class="promo" id="get-app" aria-labelledby="promo-title">
+          <img src="../assets/mascot.webp" alt="" width="170" height="170" loading="lazy">
+          <h3 id="promo-title" class="rounded">Your pet deserves a passport too</h3>
+          <p>PawPass keeps feeding, meds, vet and emergency info in one place — and shares it with your sitter in one tap.</p>
+          <div class="actions">${storeButton("btn-primary")}${openInApp ? openInAppButton() : ""}</div>
+          <div class="hint" id="open-hint" role="status"></div>
+        </aside>`;
+    }
+    function storeButton(cls) {
+      return APP_STORE_URL
+        ? `<a class="btn ${cls}" href="${APP_STORE_URL}" rel="noopener">${ICON.download}Download on the App Store</a>`
+        : `<a class="btn ${cls}" aria-disabled="true">${ICON.download}Coming soon on iOS</a>`;
+    }
+    // Only offered where the app can exist. iPadOS reports itself as a Mac, hence the touch check.
+    const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent)
+      || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    function openInAppButton() {
+      return isIOS && shareId
+        ? `<button class="btn btn-secondary" type="button" id="open-app">${ICON.open}Open in PawPass</button>` : "";
+    }
+
+    // Try the app; if the page is still in front after a moment, it isn't installed.
+    function wireOpenInApp() {
+      const btn = document.getElementById("open-app");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const hint = document.getElementById("open-hint");
+        let left = false;
+        const onHide = () => { left = true; };
+        document.addEventListener("visibilitychange", onHide, { once: true });
+        window.addEventListener("pagehide", onHide, { once: true });
+        location.href = `${APP_SCHEME}://care?id=${encodeURIComponent(shareId)}`;
+        setTimeout(() => {
+          if (left || document.hidden) return;
+          if (APP_STORE_URL) location.href = APP_STORE_URL;
+          else hint.textContent = "PawPass isn't installed on this device yet.";
+        }, 1600);
+      });
+    }
+
+    function wireTopButton() {
+      const top = document.getElementById("get-top");
+      if (APP_STORE_URL) { top.href = APP_STORE_URL; top.rel = "noopener"; }
+    }
+
+    // ─── Render ──────────────────────────────────────────────────────────────────────────
+    function render(p, expiresAt) {
+      document.title = `${p.name || "Pet"} · Care sheet · PawPass`;
+      const sp = SPECIES[p.species] || SPECIES.other;
+      const chips = [sp.label, p.breed, ageFrom(p.dob)].filter(has);
+      const alerts = (p.criticalAlerts || []).filter(has);
+      const contacts = (p.emergencyContacts || []).filter((c) => c && (has(c.name) || has(c.phone)));
+
+      // The two numbers a sitter reaches for in a hurry, right under the name.
+      const quick = [];
+      if (contacts[0] && has(contacts[0].phone)) {
+        quick.push(`<a class="btn btn-primary" href="${esc(telHref(contacts[0].phone))}">${ICON.phone}Call ${esc(contacts[0].name || "owner")}</a>`);
+      }
+      if (p.vet && has(p.vet.phone)) {
+        quick.push(`<a class="btn btn-secondary" href="${esc(telHref(p.vet.phone))}">${ICON.phone}Call the vet</a>`);
+      }
+
+      app.innerHTML = `
+        <div class="card hero">
+          ${photoBlock(p)}
+          <p class="doclabel">Care passport</p>
+          <h1 class="rounded">${esc(p.name || "Unnamed pet")}</h1>
+          ${chips.length ? `<ul class="chips">${chips.map((c) => `<li class="chip">${esc(c)}</li>`).join("")}</ul>` : ""}
+          ${quick.length ? `<div class="quick">${quick.join("")}</div>` : ""}
+        </div>
+
+        ${alerts.length ? `<section class="alerts" role="note"><h2><span aria-hidden="true">⚠️</span>Read first</h2>
+          <ul>${alerts.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></section>` : ""}
+
+        ${section("🕘", "Daily routine", routine(p))}
+        ${section("🐾", "Behavior", bullets(p.behavior))}
+        ${section("🏠", "House rules", bullets(p.houseRules))}
+        ${section("🩺", "Vet", vetCard(p.vet))}
+        ${section("📞", "Emergency contacts", contacts.length
+          ? `<div class="card pad">${contacts.map((c) => contactRow(c.name, c.relation, c.phone)).join("")}</div>` : "")}
+
+        ${promo()}
+
+        <footer>
+          ${has(p.updatedAt) ? `Updated ${esc(shortDate(p.updatedAt))} · ` : ""}Link active until ${esc(shortDate(expiresAt))}
+          · <button class="print" type="button" onclick="window.print()">Print</button>
+        </footer>`;
+      wireOpenInApp();
+    }
+
+    function showState(title, message) {
+      app.innerHTML = `
+        <div class="card state">
+          <div class="state-icon" aria-hidden="true">${ICON.paw}</div>
+          <h1 class="rounded">${esc(title)}</h1>
+          <p>${esc(message)}</p>
+        </div>
+        ${promo({ openInApp: false })}`;
+    }
+
+    wireTopButton();
 
     // Security rules allow reading one active, unexpired sheet by its ID and nothing else,
     // so a revoked, expired or made-up ID all come back as 403/404.
-    const GONE = "This link is no longer active. Ask the pet's owner for a new one.";
+    // Keep in step with CareSheetAddress.isValidShareId in the iOS app.
+    const GONE = ["This link is no longer active", "Ask the pet's owner to share a new one from PawPass."];
     if (!/^[23456789abcdefghjkmnpqrstuvwxyz]{12}$/.test(shareId)) {
-      showState(GONE);
+      showState(...GONE);
     } else {
       fetch(`https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/careSheets/${shareId}`)
         .then((r) => {
@@ -98,10 +487,11 @@
         })
         .then((doc) => {
           const sheet = decode({ mapValue: { fields: doc.fields } });
-          render(sheet.snapshot, sheet.expiresAt);
+          render(sheet.snapshot || {}, sheet.expiresAt);
         })
-        .catch((e) => showState(e.message === "gone" ? GONE
-          : "Couldn't load the care sheet. Check your connection and refresh."));
+        .catch((e) => e.message === "gone"
+          ? showState(...GONE)
+          : showState("Couldn't load the care sheet", "Check your connection and refresh the page."));
     }
   </script>
 </body>

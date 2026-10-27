@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "docsnapper",
+    "name": "DocSnapper",
+    "storeName": "DocSnapper: PDF Scanner & OCR",
+    "subtitle": "Scan Documents, Sign & Edit",
+    "category": "Productivity",
+    "appId": "6737960750",
+    "storeUrl": "https://apps.apple.com/us/app/docsnapper-pdf-scanner-ocr/id6737960750",
+    "accent": "#1842b6",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5e/86/fe/5e86fec6-a67c-3f33-edd2-e9f3a33cc5a5/iPhones_6.9-01.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9f/5a/07/9f5a0727-ddec-99e3-efd7-68c5310426a3/iPhones_6.9-02.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d4/6f/67/d46f67b2-97c7-c5e6-d616-1826920fcce8/iPhones_6.9-03.png/600x1300bb.webp"
+    ],
+    "summary": "Turn any page, receipt or old document into a clean, sharp PDF in seconds. Scan, sign, redact and recognize text, all on your iPhone.",
+    "intro": [
+      "DocSnapper turns your iPhone into a full document scanner. Point the camera at a page and DocSnapper finds the edges, flattens the perspective and cleans up the image, then lets you sign it, redact it, run text recognition on it and export a sharp PDF.",
+      "It's built entirely on Apple's own Vision and VisionKit frameworks. Your documents are scanned, processed and stored on your device."
+    ],
+    "highlights": ["Processed on your device", "18 cleanup filters", "PDF, PNG, JPG & TXT export", "10+ languages"],
+    "features": [
+      {"icon": "fa-camera", "title": "Scan and import", "text": "Multi-page capture with automatic edge detection, auto-crop and perspective correction. Import photos, PDFs and images from Files."},
+      {"icon": "fa-magic", "title": "18 cleanup filters", "text": "Magic Color, Deep B&W, De-shadow, Whiteboard, Denoise, Sharpen and more, tuned for paper, receipts, whiteboards and handwriting."},
+      {"icon": "fa-pen-nib", "title": "A real editor", "text": "Sign, mark up, permanently hide sensitive info, add form marks, stamps and watermarks, change page size and fix curved pages."},
+      {"icon": "fa-font", "title": "Text recognition (OCR)", "text": "Pull the text out of any scan, read it full screen, copy or share it, or export a whole folder as a text file."},
+      {"icon": "fa-exchange-alt", "title": "Replace text in a scan", "text": "Swap individual words in place. The patch matches the paper and ink color so the correction blends into the page."},
+      {"icon": "fa-folder-open", "title": "Stay organized", "text": "Folders with search, sorting and drag to reorder. Every edit is non-destructive, so your original scan is always kept."},
+      {"icon": "fa-share-square", "title": "Export and share", "text": "PDF, PNG, JPG and TXT with compression controls and a live file-size estimate. Send to Files, Mail, Dropbox or any app."},
+      {"icon": "fa-cloud", "title": "iCloud sync", "text": "Your folders follow you to every device signed in to the same Apple Account, through your own private iCloud Drive."}
+    ],
+    "note": ""
+  },
+  {
+    "slug": "cocktale",
+    "name": "Cocktale",
+    "storeName": "Cocktale: Bar & Cocktails",
+    "subtitle": "Recipes From Your Home Bar",
+    "category": "Food & Drink",
+    "appId": "6800644275",
+    "storeUrl": "https://apps.apple.com/us/app/cocktale-bar-cocktails/id6800644275",
+    "accent": "#b45309",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ea/20/86/ea2086d1-00ac-a595-bac4-a425a4ac0b5c/01.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/a7/3d/1fa73d85-e88b-e11e-f3f7-63550a3fba53/02.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/25/71/1b2571b6-4d5e-2265-7a82-083d9a3e848a/03.png/600x1300bb.webp"
+    ],
+    "summary": "Cocktail and mocktail recipes for every occasion, plus a simple way to keep track of what you drink.",
+    "intro": [
+      "Looking for cocktail recipes, mocktail recipes, or non-alcoholic drink ideas? Cocktale helps you discover drinks for every occasion while giving you an easy way to track your alcohol consumption.",
+      "Whether you're a cocktail enthusiast, a mocktail lover, or simply want to be more mindful of your drinking, Cocktale gives you a simple way to explore, save, and track your drinks."
+    ],
+    "highlights": ["Classics and new drinks", "Mocktails and alcohol-free ideas", "Personal drink tracker", "New recipes added regularly"],
+    "features": [
+      {"icon": "fa-cocktail", "title": "Cocktail recipes", "text": "Discover recipes across different spirits, flavors and drink styles. Find the classics, explore new drinks and save the ones you love."},
+      {"icon": "fa-glass-whiskey", "title": "Mocktail recipes", "text": "Delicious mocktails and non-alcoholic drinks for when you want great flavor without the alcohol."},
+      {"icon": "fa-chart-bar", "title": "Consumption tracker", "text": "Keep a personal record of the drinks you have and build awareness of your drinking habits."},
+      {"icon": "fa-sliders-h", "title": "Discover by preference", "text": "Browse by type, flavor, spirit and occasion to find exactly what you're in the mood for."},
+      {"icon": "fa-heart", "title": "Save favorites", "text": "Keep your favorite cocktail and mocktail recipes one tap away."},
+      {"icon": "fa-layer-group", "title": "Collections", "text": "Organize drinks into collections that make sense for you: party menus, summer drinks, weeknight classics."},
+      {"icon": "fa-share-alt", "title": "Share recipes", "text": "Send your favorite recipes to friends and family."},
+      {"icon": "fa-lightbulb", "title": "Fresh inspiration", "text": "New recipes arrive regularly, so there's always something worth trying."}
+    ],
+    "note": "Cocktale is intended for adults of legal drinking age. Please drink responsibly."
+  },
+  {
+    "slug": "flirtwise",
+    "name": "FlirtWise",
+    "storeName": "FlirtWise: AI Dating Assistant",
+    "subtitle": "Rizz Openers & Texting Replies",
+    "category": "Lifestyle",
+    "appId": "6755668869",
+    "storeUrl": "https://apps.apple.com/us/app/flirtwise-ai-dating-assistant/id6755668869",
+    "accent": "#d6336c",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/a5/1a/27a51a33-f23e-d7fc-d5eb-a3d82085c4ba/Placeholder.mill/400x400Icon.ApSiOS01-75.webp",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/0e/a8/f30ea8b9-f46d-84c5-acac-a15f6bcb5462/01.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f5/bd/4f/f5bd4f14-d550-8212-31bc-7028363dc225/02.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/87/ff/34/87ff343b-cd1a-0f17-1f9f-f3bebdde19ab/08.png/600x1300bb.webp"
+    ],
+    "summary": "Your AI wingman for dating apps. Get ready-to-send replies, openers that beat \"hey\", and a sharper profile.",
+    "intro": [
+      "FlirtWise is your AI wingman for dating apps. It helps you know exactly what to say, whoever you're talking to.",
+      "Stuck on a reply? Staring at a profile with no idea how to start? Paste a chat or drop in a screenshot and FlirtWise gives you three ready-to-send messages in the vibe you choose."
+    ],
+    "highlights": ["3 free AI replies to start", "Screenshots read on your device", "18 languages", "Built for everyone"],
+    "features": [
+      {"icon": "fa-reply", "title": "Reply", "text": "Paste a conversation or upload screenshots and get 3 natural replies. Pick a vibe, copy your favorite, or ask for more like it."},
+      {"icon": "fa-comment-dots", "title": "Openers", "text": "Turn a profile, bio or prompt into 3 openers that beat \"hey\", each with a note on why it works."},
+      {"icon": "fa-star", "title": "Profile glow-up", "text": "Get a 0–100 score for your bio and prompts, 3 clear fixes and a rewritten version you can use right away."},
+      {"icon": "fa-user-friends", "title": "Match actions", "text": "Save matches, then reply, revive a quiet chat, ask them out or get date ideas, all kept in that match's history."},
+      {"icon": "fa-robot", "title": "AI wingman chat", "text": "Keep a running conversation with your wingman, decode a confusing message and get quick reply options."},
+      {"icon": "fa-book-open", "title": "Guides and tips", "text": "21 short guides and 60 practical tips on openers, conversation flow, asking out, confidence and respect."},
+      {"icon": "fa-users", "title": "Built for everyone", "text": "Men, women, non-binary and LGBTQ+ users alike. It respects pronouns and adapts to each dating app's culture."},
+      {"icon": "fa-user-shield", "title": "Your data, your choice", "text": "FlirtWise asks before any text is sent to an AI provider, and you can turn AI processing off at any time."}
+    ],
+    "note": "FlirtWise is not affiliated with or endorsed by Tinder, Hinge, Bumble, Grindr, HER, Feeld, Raya or any other dating app."
+  },
+  {
+    "slug": "wealthwise",
+    "name": "WealthWise",
+    "storeName": "WealthWise - Budget & Finance",
+    "subtitle": "Expense Tracker, Money Manager",
+    "category": "Finance",
+    "appId": "6741387189",
+    "storeUrl": "https://apps.apple.com/us/app/wealthwise-budget-finance/id6741387189",
+    "accent": "#2563eb",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/04/a8/3f04a82b-8d49-2490-62a6-652d653b1823/Placeholder.mill/400x400Icon.ApSiOS01-75.webp",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8d/d6/d1/8dd6d116-2382-cd3d-a7cf-785b252baa65/01.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/34/86/92/3486924f-5e32-fb6b-e299-b3b50669d0b3/02.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e5/04/45/e5044576-9510-57de-a459-bf413c227402/03.png/600x1300bb.webp"
+    ],
+    "summary": "A simple, private budget and expense tracker with AI insights. No account, no bank linking, and your data stays on your device.",
+    "intro": [
+      "Master your money and achieve your financial goals with WealthWise, the simple, private, all-in-one budget and expense tracker that works entirely on your device.",
+      "Whether you're saving for a goal, trying to cut spending, or simply want to understand where your money goes, WealthWise gives you the tools to take control."
+    ],
+    "highlights": ["No account required", "No bank linking", "Data stays on your device", "iCloud sync across devices"],
+    "features": [
+      {"icon": "fa-receipt", "title": "Expense logging", "text": "Log unlimited transactions and see a clear monthly overview of where your money goes."},
+      {"icon": "fa-heartbeat", "title": "Financial Health Score", "text": "One number tracking savings rate, budget discipline, spending steadiness and income, showing what's holding you back."},
+      {"icon": "fa-chart-line", "title": "Month-end forecast", "text": "See where your spending lands before the month is over, including recurring bills that haven't been charged yet."},
+      {"icon": "fa-bell", "title": "What Changed", "text": "Spots when a category runs hot, a charge is unusually large, or something new appears, with a next step attached."},
+      {"icon": "fa-redo", "title": "Subscription audit", "text": "Finds charges that quietly repeat, even ones you never labelled, and shows what each really costs per year."},
+      {"icon": "fa-bullseye", "title": "Goal planner", "text": "Set a savings target and instantly see whether it's realistic, plus a plan for exactly where the money comes from."},
+      {"icon": "fa-comments", "title": "Ask WealthWise", "text": "Ask any question about your spending in plain English and get answers from your real transactions."},
+      {"icon": "fa-file-export", "title": "Reports and export", "text": "Full monthly reports, 6-month trends, bill reminders, home screen widgets and CSV or PDF export with WealthWise PRO."}
+    ],
+    "note": ""
+  }
+]

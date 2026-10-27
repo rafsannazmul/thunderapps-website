@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Cocktale: Bar &amp; Cocktails | Thunder Apps Studio</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
     <meta name="description" content="Cocktail and mocktail recipes for every occasion, plus a simple way to keep track of what you drink.">
     <link rel="canonical" href="https://thunderapps.xyz/cocktale">
     <meta property="og:site_name" content="Thunder Apps Studio">
@@ -39,362 +39,290 @@
 }
     </script>
 
-    <!-- Google Web Fonts -->
+    <!-- site:head -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/brand/favicon-192.png">
+
+    <!-- Inter is only a fallback: Apple devices use the system font (SF Pro) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/apps.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <!-- /site:head -->
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
+    <!-- site:nav -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="nav">
+        <div class="wrap nav-inner">
+            <a href="index.html" class="brand" aria-label="Thunder Apps Studio home"><img class="brand-mark" src="img/brand/thunder-apps-icon-3d-144.png" alt="" width="36" height="36" decoding="async"><span>Thunder Apps Studio</span></a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="apps.html" class="nav-link is-active" aria-current="page">Apps</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="mailto:info@thunderapps.xyz" class="btn btn-tinted btn-sm nav-call" title="info@thunderapps.xyz"><i class="fas fa-envelope" aria-hidden="true"></i>Email us</a>
+        </div>
+    </header>
+    <!-- /site:nav -->
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark py-2 d-none d-md-flex">
-        <div class="container">
-            <div class="d-flex justify-content-between topbar">
-                <div class="top-info">
-                    <small class="me-3 text-white-50"><i class="fas fa-map-marker-alt me-2 text-secondary"></i>Dhaka, Bangladesh</small>
-                    <small class="me-3 text-white-50"><i class="fas fa-envelope me-2 text-secondary"></i>info@thunderapps.xyz</small>
-                </div>
-                <div id="note" class="text-secondary d-none d-xl-flex"><small><a href="apps.html" class="text-secondary">Check Now : New Apps Launched</a></small></div>
-                <div class="top-link">
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                </div>
+    <main id="main" style="--app-accent: #b45309;">
+        <div class="wrap">
+            <div class="page-head" style="padding-bottom: 0;">
+                <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="apps.html">Apps</a></li><li aria-current="page">Cocktale</li></ol></nav>
             </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
 
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-primary">
-        <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="text-white fw-bold d-block">Thunder<span class="text-secondary">Apps Studio</span> </h1>
-                </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <a href="apps.html" class="nav-item nav-link active text-secondary">Apps</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu rounded">
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <!-- Header: icon, name, Get -->
+            <section class="product-head" aria-labelledby="app-title">
+                <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="Cocktale app icon" width="168" height="168">
+                <div>
+                    <h1 class="product-title" id="app-title">Cocktale: Bar &amp; Cocktails</h1>
+                    <p class="product-sub">Recipes From Your Home Bar</p>
+                    <a class="product-dev" href="apps.html">Thunder Apps Studio</a>
+                    <div class="product-actions">
+                        <a href="https://apps.apple.com/us/app/cocktale-bar-cocktails/id6800644275" class="get get-lg" target="_blank" rel="noopener" aria-label="Get Cocktale on the App Store">Get</a>
+                        <span class="product-price">Free<br>In-App Purchases</span>
                     </div>
                 </div>
-                <div class="d-none d-xl-flex flex-shirink-0">
-                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                        <a href="tel:+8801701013856" class="position-relative animated tada infinite">
-                            <i class="fa fa-phone-alt text-white fa-2x"></i>
-                            <div class="position-absolute" style="top: -7px; left: 20px;">
-                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="d-flex flex-column pe-4">
-                        <span class="text-white-50">Have any questions?</span>
-                        <span class="text-secondary">Call: +88-017-0101-3856</span>
+            </section>
+
+            <dl class="info-strip">
+                <div><dt>Category</dt><dd><span class="info-value"><i class="fas fa-utensils" aria-hidden="true"></i></span><span class="info-sub">Food &amp; Drink</span></dd></div>
+                <div><dt>Device</dt><dd><span class="info-value"><i class="fas fa-mobile-alt" aria-hidden="true"></i></span><span class="info-sub">iPhone</span></dd></div>
+                <div><dt>Price</dt><dd><span class="info-value">Free</span><span class="info-sub">In-App Purchases</span></dd></div>
+                <div><dt>Developer</dt><dd><span class="info-value"><i class="fas fa-user-circle" aria-hidden="true"></i></span><span class="info-sub">Thunder Apps Studio</span></dd></div>
+            </dl>
+        </div>
+
+        <!-- Screenshots -->
+        <section class="section" aria-labelledby="shots-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 class="section-title" id="shots-title">iPhone Screenshots</h2>
+                    <div class="shelf-nav">
+                        <button type="button" class="shelf-btn" data-shelf-prev="shots" aria-label="Previous screenshots"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <button type="button" class="shelf-btn" data-shelf-next="shots" aria-label="Next screenshots"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </div>
-    <!-- Navbar End -->
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5">
-        <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Cocktale</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item"><a href="apps.html">Apps</a></li><li class="breadcrumb-item" aria-current="page">Cocktale</li></ol>
-            </nav>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-    <main class="ta-app" style="--app-accent: #b45309;">
-
-        <!-- Hero: icon, name, download -->
-        <section class="container-fluid py-5 bg-light">
-            <div class="container">
-                <div class="row g-4 g-lg-5 align-items-center">
-                    <div class="col-lg-5 ta-hero-text wow fadeIn" data-wow-delay=".1s">
-                        <img class="ta-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="Cocktale app icon" width="112" height="112">
-                        <h2 class="ta-title">Cocktale: Bar &amp; Cocktails</h2>
-                        <p class="ta-subtitle">Recipes From Your Home Bar</p>
-                        <ul class="ta-chips">
-                            <li>Food &amp; Drink</li>
-                            <li>iPhone</li>
-                            <li>Free · In-App Purchases</li>
-                        </ul>
-                        <p class="ta-summary">Cocktail and mocktail recipes for every occasion, plus a simple way to keep track of what you drink.</p>
-                        <a href="https://apps.apple.com/us/app/cocktale-bar-cocktails/id6800644275" class="ta-badge " target="_blank" rel="noopener" aria-label="Download Cocktale on the App Store"><i class="fab fa-apple" aria-hidden="true"></i><span><small>Download on the</small>App Store</span></a>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="ta-shots" aria-label="Cocktale screenshots">
-                    <figure class="ta-shot ta-shot-1"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ea/20/86/ea2086d1-00ac-a595-bac4-a425a4ac0b5c/01.png/600x1300bb.webp" alt="Cocktale screenshot 1" width="600" height="1300" decoding="async"></figure>
-                    <figure class="ta-shot ta-shot-2"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/a7/3d/1fa73d85-e88b-e11e-f3f7-63550a3fba53/02.png/600x1300bb.webp" alt="Cocktale screenshot 2" width="600" height="1300" loading="lazy" decoding="async"></figure>
-                    <figure class="ta-shot ta-shot-3"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/25/71/1b2571b6-4d5e-2265-7a82-083d9a3e848a/03.png/600x1300bb.webp" alt="Cocktale screenshot 3" width="600" height="1300" loading="lazy" decoding="async"></figure>
-                        </div>
-                    </div>
-                </div>
+                <ul class="shelf shots" id="shots" data-shelf>
+                    <li><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ea/20/86/ea2086d1-00ac-a595-bac4-a425a4ac0b5c/01.png/600x1300bb.webp" alt="Cocktale screenshot 1" width="600" height="1300" decoding="async"></li>
+                    <li><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/a7/3d/1fa73d85-e88b-e11e-f3f7-63550a3fba53/02.png/600x1300bb.webp" alt="Cocktale screenshot 2" width="600" height="1300" loading="lazy" decoding="async"></li>
+                    <li><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/25/71/1b2571b6-4d5e-2265-7a82-083d9a3e848a/03.png/600x1300bb.webp" alt="Cocktale screenshot 3" width="600" height="1300" loading="lazy" decoding="async"></li>
+                </ul>
             </div>
         </section>
 
         <!-- About -->
-        <section class="container py-5">
-            <div class="row g-4 g-lg-5">
-                <div class="col-lg-7 ta-about">
-                    <h2>About Cocktale</h2>
-                    <p>Looking for cocktail recipes, mocktail recipes, or non-alcoholic drink ideas? Cocktale helps you discover drinks for every occasion while giving you an easy way to track your alcohol consumption.</p>
-                    <p>Whether you&#x27;re a cocktail enthusiast, a mocktail lover, or simply want to be more mindful of your drinking, Cocktale gives you a simple way to explore, save, and track your drinks.</p>
-                </div>
-                <div class="col-lg-5">
-                    <ul class="ta-highlights">
-                <li><i class="fas fa-check-circle"></i>Classics and new drinks</li>
-                <li><i class="fas fa-check-circle"></i>Mocktails and alcohol-free ideas</li>
-                <li><i class="fas fa-check-circle"></i>Personal drink tracker</li>
-                <li><i class="fas fa-check-circle"></i>New recipes added regularly</li>
+        <section class="section ruled" aria-labelledby="about-title">
+            <div class="wrap">
+                <div class="desc">
+                    <div class="prose">
+                        <h2 class="section-title" id="about-title" style="margin-bottom: 16px;">About Cocktale</h2>
+                        <p>Looking for cocktail recipes, mocktail recipes, or non-alcoholic drink ideas? Cocktale helps you discover drinks for every occasion while giving you an easy way to track your alcohol consumption.</p>
+                        <p>Whether you&#x27;re a cocktail enthusiast, a mocktail lover, or simply want to be more mindful of your drinking, Cocktale gives you a simple way to explore, save, and track your drinks.</p>
+                    </div>
+                    <ul class="checks">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i>Classics and new drinks</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i>Mocktails and alcohol-free ideas</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i>Personal drink tracker</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i>New recipes added regularly</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- Features -->
-        <section class="container pb-5">
-            <h2 class="ta-section-title">What you can do</h2>
-            <div class="row g-4">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-cocktail"></i></span>
+        <section class="section ruled" aria-labelledby="features-title">
+            <div class="wrap">
+                <div class="section-head"><h2 class="section-title" id="features-title">What you can do</h2></div>
+                <ul class="tiles tiles-4">
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-cocktail" aria-hidden="true"></i></span>
                         <h3>Cocktail recipes</h3>
                         <p>Discover recipes across different spirits, flavors and drink styles. Find the classics, explore new drinks and save the ones you love.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-glass-whiskey"></i></span>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-glass-whiskey" aria-hidden="true"></i></span>
                         <h3>Mocktail recipes</h3>
                         <p>Delicious mocktails and non-alcoholic drinks for when you want great flavor without the alcohol.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-chart-bar"></i></span>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-chart-bar" aria-hidden="true"></i></span>
                         <h3>Consumption tracker</h3>
                         <p>Keep a personal record of the drinks you have and build awareness of your drinking habits.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-sliders-h"></i></span>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-sliders-h" aria-hidden="true"></i></span>
                         <h3>Discover by preference</h3>
                         <p>Browse by type, flavor, spirit and occasion to find exactly what you&#x27;re in the mood for.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-heart"></i></span>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-heart" aria-hidden="true"></i></span>
                         <h3>Save favorites</h3>
                         <p>Keep your favorite cocktail and mocktail recipes one tap away.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-layer-group"></i></span>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
                         <h3>Collections</h3>
                         <p>Organize drinks into collections that make sense for you: party menus, summer drinks, weeknight classics.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-share-alt"></i></span>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-share-alt" aria-hidden="true"></i></span>
                         <h3>Share recipes</h3>
                         <p>Send your favorite recipes to friends and family.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="ta-feature h-100">
-                        <span class="ta-feature-icon"><i class="fas fa-lightbulb"></i></span>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-accent"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
                         <h3>Fresh inspiration</h3>
                         <p>New recipes arrive regularly, so there&#x27;s always something worth trying.</p>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- Download CTA -->
-        <section class="container pb-5">
-            <div class="ta-cta">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="72" height="72">
-                <div>
-                    <h2>Get Cocktale for iPhone</h2>
-                    <p>Free to download on the App Store.</p>
-                </div>
-                <a href="https://apps.apple.com/us/app/cocktale-bar-cocktails/id6800644275" class="ta-badge ms-md-auto" target="_blank" rel="noopener" aria-label="Download Cocktale on the App Store"><i class="fab fa-apple" aria-hidden="true"></i><span><small>Download on the</small>App Store</span></a>
+        <!-- Information -->
+        <section class="section ruled" aria-labelledby="info-title">
+            <div class="wrap">
+                <div class="section-head"><h2 class="section-title" id="info-title">Information</h2></div>
+                <dl class="info-table">
+                    <div><dt>Provider</dt><dd>Thunder Apps Studio</dd></div>
+                    <div><dt>Category</dt><dd>Food &amp; Drink</dd></div>
+                    <div><dt>Compatibility</dt><dd>iPhone</dd></div>
+                    <div><dt>Price</dt><dd>Free</dd></div>
+                    <div><dt>In-App Purchases</dt><dd>Yes</dd></div>
+                    <div><dt>App Store</dt><dd><a href="https://apps.apple.com/us/app/cocktale-bar-cocktails/id6800644275" target="_blank" rel="noopener">View on the App Store</a></dd></div>
+                </dl>
+                <p class="note">Cocktale is intended for adults of legal drinking age. Please drink responsibly.</p>
             </div>
-            <p class="ta-note">Cocktale is intended for adults of legal drinking age. Please drink responsibly.</p>
+        </section>
+
+        <!-- Download -->
+        <section class="section-tight">
+            <div class="wrap">
+                <div class="cta">
+                    <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="72" height="72" loading="lazy">
+                    <div>
+                        <h2>Get Cocktale for iPhone</h2>
+                        <p>Free to download on the App Store.</p>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/cocktale-bar-cocktails/id6800644275" class="store-badge" target="_blank" rel="noopener" aria-label="Download Cocktale on the App Store"><i class="fab fa-apple" aria-hidden="true"></i><span><small>Download on the</small>App Store</span></a>
+                </div>
+            </div>
         </section>
 
         <!-- More apps -->
-        <section class="container-fluid py-5 bg-light">
-            <div class="container">
-                <h2 class="ta-section-title">More apps from Thunder Apps</h2>
-                <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <article class="ta-card h-100" style="--app-accent: #1842b6;">
-                        <a class="ta-card-link" href="docsnapper.html" aria-label="DocSnapper details"></a>
-                        <div class="ta-card-head">
-                            <img class="ta-card-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="DocSnapper app icon" width="72" height="72" loading="lazy">
-                            <div>
-                                <h3>DocSnapper</h3>
-                                <p class="ta-card-sub">Scan Documents, Sign &amp; Edit</p>
-                                <span class="ta-card-cat">Productivity</span>
+        <section class="section" aria-labelledby="more-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 class="section-title" id="more-title">More by Thunder Apps Studio</h2>
+                    <a class="link-more" href="apps.html">See All</a>
+                </div>
+                <ul class="app-list">
+                    <li><div class="app-row">
+                            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+                            <div class="app-row-body">
+                                <div class="app-row-text">
+                                    <div class="app-row-name"><a href="docsnapper.html">DocSnapper</a></div>
+                                    <div class="app-row-sub">Scan Documents, Sign &amp; Edit</div>
+                                    <div class="app-row-cat">Productivity</div>
+                                </div>
+                                <a href="https://apps.apple.com/us/app/docsnapper-pdf-scanner-ocr/id6737960750" class="get" target="_blank" rel="noopener" aria-label="Get DocSnapper on the App Store">Get</a>
                             </div>
-                        </div>
-                        <p class="ta-card-summary">Turn any page, receipt or old document into a clean, sharp PDF in seconds. Scan, sign, redact and recognize text, all on your iPhone.</p>
-                        
-                        <div class="ta-card-actions">
-                            <a href="docsnapper.html" class="btn btn-primary rounded-pill px-4">Learn more</a>
-                            <a href="https://apps.apple.com/us/app/docsnapper-pdf-scanner-ocr/id6737960750" class="ta-badge " target="_blank" rel="noopener" aria-label="Download DocSnapper on the App Store"><i class="fab fa-apple" aria-hidden="true"></i><span><small>Download on the</small>App Store</span></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <article class="ta-card h-100" style="--app-accent: #d6336c;">
-                        <a class="ta-card-link" href="flirtwise.html" aria-label="FlirtWise details"></a>
-                        <div class="ta-card-head">
-                            <img class="ta-card-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/a5/1a/27a51a33-f23e-d7fc-d5eb-a3d82085c4ba/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="FlirtWise app icon" width="72" height="72" loading="lazy">
-                            <div>
-                                <h3>FlirtWise</h3>
-                                <p class="ta-card-sub">Rizz Openers &amp; Texting Replies</p>
-                                <span class="ta-card-cat">Lifestyle</span>
+                        </div></li>
+                    <li><div class="app-row">
+                            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/a5/1a/27a51a33-f23e-d7fc-d5eb-a3d82085c4ba/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+                            <div class="app-row-body">
+                                <div class="app-row-text">
+                                    <div class="app-row-name"><a href="flirtwise.html">FlirtWise</a></div>
+                                    <div class="app-row-sub">Rizz Openers &amp; Texting Replies</div>
+                                    <div class="app-row-cat">Lifestyle</div>
+                                </div>
+                                <a href="https://apps.apple.com/us/app/flirtwise-ai-dating-assistant/id6755668869" class="get" target="_blank" rel="noopener" aria-label="Get FlirtWise on the App Store">Get</a>
                             </div>
-                        </div>
-                        <p class="ta-card-summary">Your AI wingman for dating apps. Get ready-to-send replies, openers that beat &quot;hey&quot;, and a sharper profile.</p>
-                        
-                        <div class="ta-card-actions">
-                            <a href="flirtwise.html" class="btn btn-primary rounded-pill px-4">Learn more</a>
-                            <a href="https://apps.apple.com/us/app/flirtwise-ai-dating-assistant/id6755668869" class="ta-badge " target="_blank" rel="noopener" aria-label="Download FlirtWise on the App Store"><i class="fab fa-apple" aria-hidden="true"></i><span><small>Download on the</small>App Store</span></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <article class="ta-card h-100" style="--app-accent: #2563eb;">
-                        <a class="ta-card-link" href="wealthwise.html" aria-label="WealthWise details"></a>
-                        <div class="ta-card-head">
-                            <img class="ta-card-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/04/a8/3f04a82b-8d49-2490-62a6-652d653b1823/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="WealthWise app icon" width="72" height="72" loading="lazy">
-                            <div>
-                                <h3>WealthWise</h3>
-                                <p class="ta-card-sub">Expense Tracker, Money Manager</p>
-                                <span class="ta-card-cat">Finance</span>
+                        </div></li>
+                    <li><div class="app-row">
+                            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/04/a8/3f04a82b-8d49-2490-62a6-652d653b1823/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+                            <div class="app-row-body">
+                                <div class="app-row-text">
+                                    <div class="app-row-name"><a href="wealthwise.html">WealthWise</a></div>
+                                    <div class="app-row-sub">Expense Tracker, Money Manager</div>
+                                    <div class="app-row-cat">Finance</div>
+                                </div>
+                                <a href="https://apps.apple.com/us/app/wealthwise-budget-finance/id6741387189" class="get" target="_blank" rel="noopener" aria-label="Get WealthWise on the App Store">Get</a>
                             </div>
-                        </div>
-                        <p class="ta-card-summary">A simple, private budget and expense tracker with AI insights. No account, no bank linking, and your data stays on your device.</p>
-                        
-                        <div class="ta-card-actions">
-                            <a href="wealthwise.html" class="btn btn-primary rounded-pill px-4">Learn more</a>
-                            <a href="https://apps.apple.com/us/app/wealthwise-budget-finance/id6741387189" class="ta-badge " target="_blank" rel="noopener" aria-label="Download WealthWise on the App Store"><i class="fab fa-apple" aria-hidden="true"></i><span><small>Download on the</small>App Store</span></a>
-                        </div>
-                    </article>
+                        </div></li>
+                </ul>
                 </div>
-                </div>
-            </div>
         </section>
     </main>
 
-    <!-- Footer Start -->
-    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
-        <div class="container pt-5 pb-4">
-            <div class="row g-4 g-lg-5">
-                <div class="col-lg-3 col-md-6">
-                    <a href="index.html">
-                        <h1 class="text-white fw-bold d-block">Thunder<span class="text-secondary">Apps Studio</span> </h1>
-                    </a>
-                    <p class="mt-4 text-light">Thunder Apps Studio delivers innovative, user-friendly mobile apps for iOS. Specializing in custom solutions, we create high-quality apps tailored to meet your business needs, ensuring seamless design and exceptional user experiences.</p>
+    <!-- site:footer -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand"><img class="brand-mark" src="img/brand/thunder-apps-icon-3d-144.png" alt="" width="36" height="36" decoding="async"><span>Thunder Apps Studio</span></a>
+                    <p class="footer-about">Thunder Apps Studio delivers innovative, user-friendly mobile apps for iOS. Specializing in custom solutions, we create high-quality apps tailored to meet your business needs, ensuring seamless design and exceptional user experiences.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <span class="h3 text-secondary">Our Apps</span>
-                    <div class="mt-4 d-flex flex-column short-link">
-                        <a href="docsnapper.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>DocSnapper</a>
-                        <a href="cocktale.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Cocktale</a>
-                        <a href="flirtwise.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>FlirtWise</a>
-                        <a href="wealthwise.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>WealthWise</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <span class="h3 text-secondary">Help Link</span>
-                    <div class="mt-4 d-flex flex-column help-link">
-                        <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
-                        <a href="terms.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Terms and Conditions</a>
-                        <a href="privacy.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Privacy Policy</a>
-                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <span class="h3 text-secondary">Contact Us</span>
-                    <div class="text-white mt-4 d-flex flex-column contact-link">
-                        <span class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Dhaka, Bangladesh</span>
-                        <a href="tel:+8801701013856" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> +88-017-0101-3856</a>
-                        <a href="mailto:info@thunderapps.xyz" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> info@thunderapps.xyz</a>
-                    </div>
+                <nav aria-label="Our apps">
+                    <h2>Our Apps</h2>
+                    <ul>
+                        <li><a href="docsnapper.html">DocSnapper</a></li>
+                        <li><a href="cocktale.html">Cocktale</a></li>
+                        <li><a href="flirtwise.html">FlirtWise</a></li>
+                        <li><a href="wealthwise.html">WealthWise</a></li>
+                        <li><a href="apps.html">All apps</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Company">
+                    <h2>Company</h2>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="testimonial.html">Inside our apps</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Help">
+                    <h2>Help</h2>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li>Dhaka, Bangladesh</li>
+                        <li><a href="mailto:info@thunderapps.xyz">info@thunderapps.xyz</a></li>
+                    </ul>
                 </div>
             </div>
-            <hr class="text-light mt-5 mb-4">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <span class="text-light"><a href="index.html" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Thunder Apps Studio</a>, All right reserved.</span>
-                </div>
+            <div class="footer-bottom">
+                <span>Copyright &copy; Thunder Apps Studio. All rights reserved.</span>
+                <span><a href="terms.html">Terms</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a></span>
             </div>
         </div>
-    </div>
-    <!-- Footer End -->
+    </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+    <button type="button" class="to-top" aria-label="Back to top">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/site.js" defer></script>
+    <!-- /site:footer -->
 </body>
 
 </html>

@@ -1,825 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Thunder Apps Studio | iOS Apps from Dhaka</title>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+    <meta name="description" content="Thunder Apps Studio is an innovative iOS apps creator: DocSnapper, Cocktale, FlirtWise, WealthWise and more, with 3 million users worldwide.">
+    <link rel="canonical" href="https://thunderapps.xyz/">
+    <meta property="og:site_name" content="Thunder Apps Studio">
+    <meta property="og:title" content="Thunder Apps Studio | iOS Apps from Dhaka">
+    <meta property="og:description" content="Thunder Apps Studio is an innovative iOS apps creator: DocSnapper, Cocktale, FlirtWise, WealthWise and more, with 3 million users worldwide.">
+    <meta property="og:type" content="website">
+    <!-- site:head -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/brand/favicon-192.png">
+    <link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+    <meta property="og:image" content="https://thunderapps.xyz/img/brand/thunder-apps-logo.png">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Thunder Apps Studio</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <!-- Inter is only a fallback: Apple devices use the system font (SF Pro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <!-- /site:head -->
+</head>
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
+<body>
+    <!-- site:nav -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="nav">
+        <div class="wrap nav-inner">
+            <a href="index.html" class="brand" aria-label="Thunder Apps Studio home"><img class="brand-mark" src="img/brand/thunder-apps-icon-3d-144.png" alt="" width="36" height="36" decoding="async"><span>Thunder Apps Studio</span></a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link is-active" aria-current="page">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="apps.html" class="nav-link">Apps</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="mailto:info@thunderapps.xyz" class="btn btn-tinted btn-sm nav-call" title="info@thunderapps.xyz"><i class="fas fa-envelope" aria-hidden="true"></i>Email us</a>
         </div>
-        <!-- Spinner End -->
+    </header>
+    <!-- /site:nav -->
 
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-dark py-2 d-none d-md-flex">
-            <div class="container">
-                <div class="d-flex justify-content-between topbar">
-                    <div class="top-info">
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Dhaka, Bangladesh</small>
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>info@thunderapps.xyz</small>
-                    </div>
-                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Check Now : New Apps Launched</small></div>
-                    <div class="top-link">
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                    </div>
+    <main id="main">
+        <!-- Today -->
+        <section class="wrap" aria-labelledby="hero-title">
+            <div class="today-head">
+                <h1 class="today-title rise" id="hero-title">An innovative iOS apps creator.</h1>
+                <p class="today-sub rise rise-2">Our apps showcase who we are: 15+ apps with more than 3 million users worldwide.</p>
+                <div class="today-actions rise rise-3">
+                    <a href="apps.html" class="btn btn-primary">Browse our apps</a>
+                    <a href="contact.html" class="btn btn-tinted">Contact us</a>
                 </div>
             </div>
-        </div>
-        <!-- Topbar End -->
+            <div class="today-cards">
+                <!-- apps:feature -->
+                <article class="story story-feature rise rise-3" style="--app-accent: #1842b6;">
+                    <a class="story-link" href="docsnapper.html" aria-label="DocSnapper: see the app"></a>
+                    <div class="story-text">
+                        <span class="story-label">App of the Day</span>
+                        <h2 class="story-title">Turn any page, receipt or old document into a clean, sharp PDF in seconds.</h2>
+                    </div>
+                    <div class="story-shots" aria-hidden="true"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5e/86/fe/5e86fec6-a67c-3f33-edd2-e9f3a33cc5a5/iPhones_6.9-01.png/600x1300bb.webp" alt="" width="600" height="1300" decoding="async"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9f/5a/07/9f5a0727-ddec-99e3-efd7-68c5310426a3/iPhones_6.9-02.png/600x1300bb.webp" alt="" width="600" height="1300" decoding="async"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d4/6f/67/d46f67b2-97c7-c5e6-d616-1826920fcce8/iPhones_6.9-03.png/600x1300bb.webp" alt="" width="600" height="1300" decoding="async"></div>
+                    <div class="story-bar">
+                        <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="44" height="44">
+                        <div class="story-bar-text"><strong>DocSnapper</strong><span>Scan Documents, Sign &amp; Edit</span></div>
+                        <a href="https://apps.apple.com/us/app/docsnapper-pdf-scanner-ocr/id6737960750" class="get" target="_blank" rel="noopener" aria-label="Get DocSnapper on the App Store">Get</a>
+                    </div>
+                </article>
+                <!-- /apps:feature -->
+                <article class="story story-soon rise rise-4">
+                    <div class="story-text">
+                        <span class="story-label">Coming soon</span>
+                        <h2 class="story-title">Top notch integration with AI to cater user’s extreme needs.</h2>
+                        <p class="story-body">2 new apps coming soon to care for your pets and store your recipes.</p>
+                    </div>
+                    <img src="pawpass/assets/mascot.webp" alt="" width="431" height="440" loading="lazy" decoding="async">
+                </article>
+            </div>
+        </section>
 
-        <!-- Navbar Start -->
-        <div class="container-fluid bg-primary">
-            <div class="container">
-                <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="text-white fw-bold d-block">Thunder<span class="text-secondary">Apps Studio</span> </h1>
-                    </a>
-                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                            <a href="index.html" class="nav-item nav-link active text-secondary">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link">Services</a>
-                            <a href="apps.html" class="nav-item nav-link">Apps</a>
-                            <!--a href="project.html" class="nav-item nav-link">Projects</a-->
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu rounded">
-                                    <!--a href="blog.html" class="dropdown-item">Our Blog</a-->
-                                    <a href="team.html" class="dropdown-item">Our Team</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
+
+        <!-- Apps -->
+        <section class="section" aria-labelledby="apps-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 class="section-title" id="apps-title">Our apps</h2>
+                    <a class="link-more" href="apps.html">See All</a>
+                </div>
+                <!-- apps:list -->
+                <ul class="app-list">
+                    <li><div class="app-row">
+                            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+                            <div class="app-row-body">
+                                <div class="app-row-text">
+                                    <div class="app-row-name"><a href="docsnapper.html">DocSnapper</a></div>
+                                    <div class="app-row-sub">Scan Documents, Sign &amp; Edit</div>
+                                    <div class="app-row-cat">Productivity</div>
                                 </div>
+                                <a href="https://apps.apple.com/us/app/docsnapper-pdf-scanner-ocr/id6737960750" class="get" target="_blank" rel="noopener" aria-label="Get DocSnapper on the App Store">Get</a>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        </div>
-                    </div>
-                    <div class="d-none d-xl-flex flex-shirink-0">
-                        <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                            <a href="" class="position-relative animated tada infinite">
-                                <i class="fa fa-phone-alt text-white fa-2x"></i>
-                                <div class="position-absolute" style="top: -7px; left: 20px;">
-                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                        </div></li>
+                    <li><div class="app-row">
+                            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+                            <div class="app-row-body">
+                                <div class="app-row-text">
+                                    <div class="app-row-name"><a href="cocktale.html">Cocktale</a></div>
+                                    <div class="app-row-sub">Recipes From Your Home Bar</div>
+                                    <div class="app-row-cat">Food &amp; Drink</div>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="d-flex flex-column pe-4 border-end">
-                            <span class="text-white-50">Have any questions?</span>
-                            <span class="text-secondary">Call: + 88-017-0101-3856</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center ms-4 ">
-                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- Navbar End -->
-
-        <!-- Carousel Start -->
-        <div class="container-fluid px-0">
-            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <img src="img/carousel-1.jpg" class="img-fluid" alt="First slide">
-                        <div class="carousel-caption">
-                            <div class="container carousel-content">
-                                <h6 class="text-secondary h4 animated fadeInUp">Our apps showcase who we are</h6>
-                                <h1 class="text-white display-1 mb-4 animated fadeInRight">An Innovative iOS Apps Creator</h1>
-                                <p class="mb-4 text-white fs-5 animated fadeInDown">15+ Apps with more than 3 Million users worldwide</p>
-                                <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
-                                <a href="" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                                <a href="https://apps.apple.com/us/app/cocktale-bar-cocktails/id6800644275" class="get" target="_blank" rel="noopener" aria-label="Get Cocktale on the App Store">Get</a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/carousel-2.jpg" class="img-fluid" alt="Second slide">
-                        <div class="carousel-caption">
-                            <div class="container carousel-content">
-                                <h6 class="text-secondary h4 animated fadeInUp">Our apps showcase who we are</h6>
-                                <h1 class="text-white display-1 mb-4 animated fadeInLeft">Top notch integration with AI to cater user's extreme needs</h1>
-                                <p class="mb-4 text-white fs-5 animated fadeInDown">2 New Apps coming soon to care for your Pets and store your Recipes</p>
-                                <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
-                                <a href="" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                        </div></li>
+                    <li><div class="app-row">
+                            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/a5/1a/27a51a33-f23e-d7fc-d5eb-a3d82085c4ba/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+                            <div class="app-row-body">
+                                <div class="app-row-text">
+                                    <div class="app-row-name"><a href="flirtwise.html">FlirtWise</a></div>
+                                    <div class="app-row-sub">Rizz Openers &amp; Texting Replies</div>
+                                    <div class="app-row-cat">Lifestyle</div>
+                                </div>
+                                <a href="https://apps.apple.com/us/app/flirtwise-ai-dating-assistant/id6755668869" class="get" target="_blank" rel="noopener" aria-label="Get FlirtWise on the App Store">Get</a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <!-- Carousel End -->
-
-
-        <!-- Fact Start -->
-        <div class="container-fluid bg-secondary py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">10</h1>
-                            <h5 class="text-white mt-1">Success in getting happy customer</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">15</h1>
-                            <h5 class="text-white mt-1">Successful commercial apps launched</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">300000</h1>
-                            <h5 class="text-white mt-1">Total users who love Thunder Apps</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">5</h1>
-                            <h5 class="text-white mt-1">Stars reviews given by satisfied clients</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Fact End -->
-
-
-        <!-- About Start -->
-        <div class="container-fluid py-5 my-5">
-            <div class="container pt-5">
-                <div class="row g-5">
-                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
-                        <div class="h-100 position-relative">
-                            <img src="img/about-1.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
-                            <div class="position-absolute w-75" style="top: 25%; left: 25%;">
-                                <img src="img/about-2.jpg" class="img-fluid w-100 rounded" alt="">
+                        </div></li>
+                    <li><div class="app-row">
+                            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/04/a8/3f04a82b-8d49-2490-62a6-652d653b1823/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+                            <div class="app-row-body">
+                                <div class="app-row-text">
+                                    <div class="app-row-name"><a href="wealthwise.html">WealthWise</a></div>
+                                    <div class="app-row-sub">Expense Tracker, Money Manager</div>
+                                    <div class="app-row-cat">Finance</div>
+                                </div>
+                                <a href="https://apps.apple.com/us/app/wealthwise-budget-finance/id6741387189" class="get" target="_blank" rel="noopener" aria-label="Get WealthWise on the App Store">Get</a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-                        <h5 class="text-primary">About Us</h5>
-                        <h1 class="mb-4">About our innovation and ideas</h1>
+                        </div></li>
+                </ul>
+                <!-- /apps:list -->
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section ruled" aria-label="About us">
+            <div class="wrap">
+                <div class="split">
+                    <div>
+                        <h2 class="section-title">About our innovation and ideas</h2>
+                        <div class="prose">
                         <p>At Thunder Apps Studio, we specialize in developing innovative mobile applications that simplify daily tasks and boost productivity. Our flagship app, Document Scanner Pro, is a testament to our dedication to delivering seamless document management tools with advanced features like AI-driven organization and intelligent scanning. We focus on creating intuitive, high-performing apps that cater to both individuals and businesses.</p>
-                        <p class="mb-4">Our mission is to empower users by transforming everyday processes into efficient, hassle-free experiences. By integrating cutting-edge technology and user-friendly design, Thunder Apps Studio is committed to enhancing how people manage documents and improve productivity across various industries.</p>
-                        <a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
+                        <p>Our mission is to empower users by transforming everyday processes into efficient, hassle-free experiences. By integrating cutting-edge technology and user-friendly design, Thunder Apps Studio is committed to enhancing how people manage documents and improve productivity across various industries.</p>
+                        </div>
+                    <div class="split-actions"><a href="about.html" class="btn btn-tinted">More details</a></div>
                     </div>
+                    <!-- apps:icons -->
+                <div class="icon-mosaic">
+                    <a href="docsnapper.html" aria-label="DocSnapper"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="150" height="150" loading="lazy" decoding="async"></a>
+                    <a href="cocktale.html" aria-label="Cocktale"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="150" height="150" loading="lazy" decoding="async"></a>
+                    <a href="flirtwise.html" aria-label="FlirtWise"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/a5/1a/27a51a33-f23e-d7fc-d5eb-a3d82085c4ba/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="150" height="150" loading="lazy" decoding="async"></a>
+                    <a href="wealthwise.html" aria-label="WealthWise"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/04/a8/3f04a82b-8d49-2490-62a6-652d653b1823/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="150" height="150" loading="lazy" decoding="async"></a>
+                </div>
+                <!-- /apps:icons -->
                 </div>
             </div>
-        </div>
-        <!-- About End -->
+        </section>
 
-
-        <!-- Services Start -->
-        <div class="container-fluid services py-5 mb-5">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Services</h5>
-                    <h1>Apps Built Specifically For User's' Ease of Tasks and Productivity.</h1>
+        <!-- Services -->
+        <section class="section ruled" aria-labelledby="services-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 class="section-title" id="services-title">Apps built for ease of tasks and productivity</h2>
+                    <a class="link-more" href="service.html">See All</a>
                 </div>
-                <div class="row g-5 services-inner">
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-code fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Mobile App Design</h4>
-                                    <p class="mb-4">Experience the future of Mobile App Design with intuitive, sleek, and user-centric apps that elevate your productivity and simplify your daily tasks.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Mobile App Development</h4>
-                                    <p class="mb-4">Unlock the full potential of Mobile App Development with custom-built, high-performance apps designed to meet your business needs and deliver exceptional user experiences.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-external-link-alt fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">UI/UX Design</h4>
-                                    <p class="mb-4">Transform your ideas into visually stunning and seamless experiences with our UI/UX Design, crafted to captivate users and maximize engagement.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fas fa-wrench fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Mobile App Bug Fixing</h4>
-                                    <p class="mb-4">Ensure flawless performance with our Mobile App Bug Fixing services, quickly resolving issues to keep your app running smoothly and efficiently.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-chart-line fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">App Performance Analysis</h4>
-                                    <p class="mb-4">Maximize your app’s potential with our comprehensive App Performance Analysis, ensuring optimal speed, efficiency, and user satisfaction at every turn.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fas fa-coins fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Crashlytics and Revenue Generation</h4>
-                                    <p class="mb-4">Boost your app’s performance with Crashlytics for real-time bug tracking and enhance your profits with smart Revenue Generation strategies, all designed to keep your app running smoothly and profitably.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <ul class="tiles">
+                    <li class="tile">
+                        <span class="glyph glyph-blue"><i class="fas fa-code" aria-hidden="true"></i></span>
+                        <h3>Mobile App Design</h3>
+                        <p>Experience the future of Mobile App Design with intuitive, sleek, and user-centric apps that elevate your productivity and simplify your daily tasks.</p>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-indigo"><i class="fas fa-file-code" aria-hidden="true"></i></span>
+                        <h3>Mobile App Development</h3>
+                        <p>Unlock the full potential of Mobile App Development with custom-built, high-performance apps designed to meet your business needs and deliver exceptional user experiences.</p>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-pink"><i class="fas fa-pencil-ruler" aria-hidden="true"></i></span>
+                        <h3>UI/UX Design</h3>
+                        <p>Transform your ideas into visually stunning and seamless experiences with our UI/UX Design, crafted to captivate users and maximize engagement.</p>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-orange"><i class="fas fa-wrench" aria-hidden="true"></i></span>
+                        <h3>Mobile App Bug Fixing</h3>
+                        <p>Ensure flawless performance with our Mobile App Bug Fixing services, quickly resolving issues to keep your app running smoothly and efficiently.</p>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-teal"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+                        <h3>App Performance Analysis</h3>
+                        <p>Maximize your app’s potential with our comprehensive App Performance Analysis, ensuring optimal speed, efficiency, and user satisfaction at every turn.</p>
+                    </li>
+                    <li class="tile">
+                        <span class="glyph glyph-green"><i class="fas fa-coins" aria-hidden="true"></i></span>
+                        <h3>Crashlytics and Revenue Generation</h3>
+                        <p>Boost your app’s performance with Crashlytics for real-time bug tracking and enhance your profits with smart Revenue Generation strategies, all designed to keep your app running smoothly and profitably.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section ruled" aria-labelledby="team-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 class="section-title" id="team-title">Meet our expert team</h2>
+                    <div style="display:flex;align-items:center;gap:16px;"><a class="link-more" href="team.html">See All</a><div class="shelf-nav"><button type="button" class="shelf-btn" data-shelf-prev="team" aria-label="Previous team members"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="shelf-btn" data-shelf-next="team" aria-label="Next team members"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
+                </div>
+                <ul class="shelf shelf-4" id="team" data-shelf>
+                    <li class="person">
+                        <img src="img/team-1.jpg" alt="Rafsan Nazmul" width="132" height="132" loading="lazy" decoding="async">
+                        <h3>Rafsan Nazmul</h3>
+                        <p>iOS Developer</p>
+                        <div class="socials"><a href="https://www.facebook.com/rnazmul/" target="_blank" rel="noopener" aria-label="Rafsan Nazmul on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><a href="https://x.com/Rafsan_iOSDev" target="_blank" rel="noopener" aria-label="Rafsan Nazmul on X (Twitter)"><i class="fab fa-twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/meet_rafsan/" target="_blank" rel="noopener" aria-label="Rafsan Nazmul on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/rafsan-nazmul-ab670bb7/" target="_blank" rel="noopener" aria-label="Rafsan Nazmul on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></div>
+                    </li>
+                    <li class="person">
+                        <img src="img/team-2.jpg" alt="Taif Al Musabe" width="132" height="132" loading="lazy" decoding="async">
+                        <h3>Taif Al Musabe</h3>
+                        <p>iOS Developer</p>
+                        <div class="socials"><a href="https://www.facebook.com/tmusabi" target="_blank" rel="noopener" aria-label="Taif Al Musabe on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/tmusabe/" target="_blank" rel="noopener" aria-label="Taif Al Musabe on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></div>
+                    </li>
+                    <li class="person">
+                        <img src="img/team-3.jpg" alt="Alex Johnson" width="132" height="132" loading="lazy" decoding="async">
+                        <h3>Alex Johnson</h3>
+                        <p>UI/UX Developer</p>
+                    </li>
+                    <li class="person">
+                        <img src="img/team-4.jpg" alt="Luca Müller" width="132" height="132" loading="lazy" decoding="async">
+                        <h3>Luca Müller</h3>
+                        <p>Backend Developer</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section ruled" aria-labelledby="inside-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 class="section-title" id="inside-title">Inside our apps</h2>
+                    <div style="display:flex;align-items:center;gap:16px;"><a class="link-more" href="testimonial.html">See All</a><div class="shelf-nav"><button type="button" class="shelf-btn" data-shelf-prev="inside" aria-label="Previous"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="shelf-btn" data-shelf-next="inside" aria-label="Next"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
+                </div>
+                <!-- apps:inside -->
+                <ul class="shelf" id="inside" data-shelf>
+                    <li class="inside-card" style="--app-accent: #1842b6;">
+                        <a class="inside-app" href="docsnapper.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>DocSnapper</span></a>
+                        <h3>Turn a crumpled receipt into a clean PDF</h3>
+                        <p>Point your camera and DocSnapper finds the edges, flattens the page and cleans it up, ready to save or send.</p>
+                        <span class="inside-stat">18 cleanup filters</span>
+                    </li>
+                    <li class="inside-card" style="--app-accent: #b45309;">
+                        <a class="inside-app" href="cocktale.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>Cocktale</span></a>
+                        <h3>Mix something new from your home bar</h3>
+                        <p>Browse cocktails by spirit, flavor and occasion, save your favorites and group them into collections.</p>
+                        <span class="inside-stat">Cocktails &amp; mocktails</span>
+                    </li>
+                    <li class="inside-card" style="--app-accent: #d6336c;">
+                        <a class="inside-app" href="flirtwise.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/a5/1a/27a51a33-f23e-d7fc-d5eb-a3d82085c4ba/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>FlirtWise</span></a>
+                        <h3>Open with something better than “hey”</h3>
+                        <p>Drop in a profile or prompt and get openers you can send, each with a note on why it works.</p>
+                        <span class="inside-stat">3 openers per profile</span>
+                    </li>
+                    <li class="inside-card" style="--app-accent: #2563eb;">
+                        <a class="inside-app" href="wealthwise.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/04/a8/3f04a82b-8d49-2490-62a6-652d653b1823/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>WealthWise</span></a>
+                        <h3>See where your money goes</h3>
+                        <p>Log your spending and get a Financial Health Score plus a forecast of where the month will land.</p>
+                        <span class="inside-stat">No bank linking</span>
+                    </li>
+                    <li class="inside-card" style="--app-accent: #1842b6;">
+                        <a class="inside-app" href="docsnapper.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/1c/6c/f81c6c5d-df54-3f3a-a415-198971e53146/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>DocSnapper</span></a>
+                        <h3>Sign and redact before you send</h3>
+                        <p>Add your signature, permanently hide sensitive details and export the result in the format you need.</p>
+                        <span class="inside-stat">PDF, PNG, JPG &amp; TXT</span>
+                    </li>
+                    <li class="inside-card" style="--app-accent: #b45309;">
+                        <a class="inside-app" href="cocktale.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/6d/48/6c6d4836-cb39-7ce4-90e9-826b8178209f/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>Cocktale</span></a>
+                        <h3>Keep an eye on what you drink</h3>
+                        <p>Log your drinks in a personal tracker and find alcohol-free ideas for nights you&#x27;d rather skip it.</p>
+                        <span class="inside-stat">Personal drink tracker</span>
+                    </li>
+                    <li class="inside-card" style="--app-accent: #d6336c;">
+                        <a class="inside-app" href="flirtwise.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/a5/1a/27a51a33-f23e-d7fc-d5eb-a3d82085c4ba/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>FlirtWise</span></a>
+                        <h3>Get unstuck on a reply</h3>
+                        <p>Paste the chat or add screenshots, pick a vibe and choose from ready-to-send replies.</p>
+                        <span class="inside-stat">18 languages</span>
+                    </li>
+                    <li class="inside-card" style="--app-accent: #2563eb;">
+                        <a class="inside-app" href="wealthwise.html"><img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/04/a8/3f04a82b-8d49-2490-62a6-652d653b1823/Placeholder.mill/400x400Icon.ApSiOS01-75.webp" alt="" width="28" height="28" loading="lazy" decoding="async"><span>WealthWise</span></a>
+                        <h3>Find the subscriptions you forgot</h3>
+                        <p>WealthWise spots charges that quietly repeat and shows what each one really costs per year.</p>
+                        <span class="inside-stat">No account needed</span>
+                    </li>
+                </ul>
+                <!-- /apps:inside -->
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section ruled" aria-labelledby="contact-title">
+            <div class="wrap">
+                <div class="section-head" style="display:block;">
+                    <h2 class="section-title" id="contact-title">Contact for any query</h2>
+                    <p class="section-lead">Have questions or need assistance? Don’t hesitate to reach out to us! Our dedicated team is excited to help you with any queries you may have. Your feedback and inquiries are what drive us to improve and innovate! Contact us today and let’s embark on this journey together. We can’t wait to hear from you!</p>
+                </div>
+                <ul class="grouped contact-list">
+                    <li><a href="mailto:info@thunderapps.xyz"><span class="glyph glyph-blue"><i class="fas fa-envelope" aria-hidden="true"></i></span><span class="grouped-text"><strong>Email Us</strong><span>info@thunderapps.xyz</span></span></a></li>
+                    <li><div class="grouped-row"><span class="glyph glyph-gray"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span><span class="grouped-text"><strong>Location</strong><span>Dhaka, Bangladesh</span></span></div></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- site:footer -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand"><img class="brand-mark" src="img/brand/thunder-apps-icon-3d-144.png" alt="" width="36" height="36" decoding="async"><span>Thunder Apps Studio</span></a>
+                    <p class="footer-about">Thunder Apps Studio delivers innovative, user-friendly mobile apps for iOS. Specializing in custom solutions, we create high-quality apps tailored to meet your business needs, ensuring seamless design and exceptional user experiences.</p>
+                </div>
+                <nav aria-label="Our apps">
+                    <h2>Our Apps</h2>
+                    <ul>
+                        <li><a href="docsnapper.html">DocSnapper</a></li>
+                        <li><a href="cocktale.html">Cocktale</a></li>
+                        <li><a href="flirtwise.html">FlirtWise</a></li>
+                        <li><a href="wealthwise.html">WealthWise</a></li>
+                        <li><a href="apps.html">All apps</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Company">
+                    <h2>Company</h2>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="testimonial.html">Inside our apps</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Help">
+                    <h2>Help</h2>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li>Dhaka, Bangladesh</li>
+                        <li><a href="mailto:info@thunderapps.xyz">info@thunderapps.xyz</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <!-- Services End -->
-
-
-        <!-- Project Start
-        <div class="container-fluid project py-5 mb-5">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Project</h5>
-                    <h1>Our Recently Completed Projects</h1>
-                </div>
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-1.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Web design</h4>
-                                        <p class="m-0 text-white">Web Analysis</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-2.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Cyber Security</h4>
-                                        <p class="m-0 text-white">Cyber Security Core</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-3.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Mobile Info</h4>
-                                        <p class="m-0 text-white">Upcomming Phone</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-4.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Web Development</h4>
-                                        <p class="m-0 text-white">Web Analysis</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-5.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Digital Marketing</h4>
-                                        <p class="m-0 text-white">Marketing Analysis</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-6.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">keyword Research</h4>
-                                        <p class="m-0 text-white">keyword Analysis</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <span>Copyright &copy; Thunder Apps Studio. All rights reserved.</span>
+                <span><a href="terms.html">Terms</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a></span>
             </div>
         </div>
-        <!-- Project End -->
+    </footer>
 
+    <button type="button" class="to-top" aria-label="Back to top">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
 
-        <!-- Blog Start 
-        <div class="container-fluid blog py-5 mb-5">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Blog</h5>
-                    <h1>Latest Blog & News</h1>
-                </div>
-                <div class="row g-5 justify-content-center">
-                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="blog-item position-relative bg-light rounded">
-                            <img src="img/blog-1.jpg" class="img-fluid w-100 rounded-top" alt="">
-                            <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Web Design</span>
-                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                                    <a href="" class="btn text-white">Read More</a>
-                                </div>
-                                <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
-                                    <div class="blog-icon-1">
-                                        <p class="text-white px-2">Share<i class="fa fa-arrow-right ms-3"></i></p>
-                                    </div>
-                                    <div class="blog-icon-2">
-                                        <a href="" class="btn me-1"><i class="fab fa-facebook-f text-white"></i></a>
-                                        <a href="" class="btn me-1"><i class="fab fa-twitter text-white"></i></a>
-                                        <a href="" class="btn me-1"><i class="fab fa-instagram text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
-                                <h5 class="">By Daniel Martin</h5>
-                                <span class="text-secondary">24 March 2023</span>
-                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
-                            </div>
-                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
-                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
-                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="blog-item position-relative bg-light rounded">
-                            <img src="img/blog-2.jpg" class="img-fluid w-100 rounded-top" alt="">
-                            <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Development</span>
-                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                                    <a href="" class="btn text-white ">Read More</a>
-                                </div>
-                                <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
-                                    <div class="blog-icon-1">
-                                        <p class="text-white px-2">Share<i class="fa fa-arrow-right ms-3"></i></p>
-                                    </div>
-                                    <div class="blog-icon-2">
-                                        <a href="" class="btn me-1"><i class="fab fa-facebook-f text-white"></i></a>
-                                        <a href="" class="btn me-1"><i class="fab fa-twitter text-white"></i></a>
-                                        <a href="" class="btn me-1"><i class="fab fa-instagram text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
-                                <h5 class="">By Daniel Martin</h5>
-                                <span class="text-secondary">23 April 2023</span>
-                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
-                            </div>
-                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
-                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
-                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="blog-item position-relative bg-light rounded">
-                            <img src="img/blog-3.jpg" class="img-fluid w-100 rounded-top" alt="">
-                            <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Mobile App</span>
-                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                                    <a href="" class="btn text-white ">Read More</a>
-                                </div>
-                                <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
-                                    <div class="blog-icon-1">
-                                        <p class="text-white px-2">Share<i class="fa fa-arrow-right ms-3"></i></p>
-                                    </div>
-                                    <div class="blog-icon-2">
-                                        <a href="" class="btn me-1"><i class="fab fa-facebook-f text-white"></i></a>
-                                        <a href="" class="btn me-1"><i class="fab fa-twitter text-white"></i></a>
-                                        <a href="" class="btn me-1"><i class="fab fa-instagram text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
-                                <h5 class="">By Daniel Martin</h5>
-                                <span class="text-secondary">30 jan 2023</span>
-                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
-                            </div>
-                            <div class="blog-coments d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
-                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
-                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog End -->
-
-
-        <!-- Team Start -->
-        <div class="container-fluid py-5 mb-5 team">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Team</h5>
-                    <h1>Meet our expert Team</h1>
-                </div>
-                <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-1.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Rafsan Nazmul</h4>
-                                    <p class="m-0">iOS Developer</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href="https://www.facebook.com/rnazmul/"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href="https://x.com/Rafsan_iOSDev"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href="https://www.instagram.com/meet_rafsan/"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href="https://www.linkedin.com/in/rafsan-nazmul-ab670bb7/"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-2.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Taif Al Musabe</h4>
-                                    <p class="m-0">iOS Developer</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href="https://www.facebook.com/tmusabi"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href="https://www.linkedin.com/in/tmusabe/"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-3.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Alex Johnson</h4>
-                                    <p class="m-0">UI/UX Developer</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-4.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Luca Müller</h4>
-                                    <p class="m-0">Backend Developer</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-        
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial py-5 mb-5">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Testimonial</h5>
-                    <h1>Our Client Saying!</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">
-                    <div class="testimonial-item border p-4">
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <img src="img/testimonial-1.jpg" alt="">
-                            </div>
-                            <div class="ms-4">
-                                <h4 class="text-secondary">Emma Rivera</h4>
-                                <p class="m-0 pb-3">Founder of FitLife Apps</p>
-                                <div class="d-flex pe-5">
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-top mt-4 pt-3">
-                            <p class="mb-0">The team at Thunder Apps Studio was incredibly responsive and professional throughout the development process. They guided us at every step, ensuring our app was not only functional but also visually stunning. We're thrilled with the final product!</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item border p-4">
-                        <div class=" d-flex align-items-center">
-                            <div class="">
-                                <img src="img/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="ms-4">
-                                <h4 class="text-secondary">Mark Thompson</h4>
-                                <p class="m-0 pb-3">CEO of GreenLeaf Solutions</p>
-                                <div class="d-flex pe-5">
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-top mt-4 pt-3">
-                            <p class="mb-0">Working with Thunder Apps Studio was a game-changer for our business. They took our ideas and transformed them into a sleek, user-friendly app that our customers love. Their attention to detail and commitment to quality exceeded our expectations!</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item border p-4">
-                        <div class=" d-flex align-items-center">
-                            <div class="">
-                                <img src="img/testimonial-3.jpg" alt="">
-                            </div>
-                            <div class="ms-4">
-                                <h4 class="text-secondary">Sophie Chang</h4>
-                                <p class="m-0 pb-3">Co-Founder of EduTech Hub</p>
-                                <div class="d-flex pe-5">
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-top mt-4 pt-3">
-                            <p class="mb-0">I can’t recommend Thunder Apps Studio enough! Their innovative approach and technical proficiency brought our app vision to life. The post-launch support has been fantastic, ensuring our app runs smoothly and continues to improve.</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item border p-4">
-                        <div class=" d-flex align-items-center">
-                            <div class="">
-                                <img src="img/testimonial-4.jpg" alt="">
-                            </div>
-                            <div class="ms-4">
-                                <h4 class="text-secondary">Samuel Patrick</h4>
-                                <p class="m-0 pb-3">Product Manager at Tech Innovations</p>
-                                <div class="d-flex pe-5">
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                    <i class="fas fa-star me-1 text-primary"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-top mt-4 pt-3">
-                            <p class="mb-0">Thunder Apps Studio delivered our project on time and within budget, which is rare in this industry. Their expertise in mobile app development helped us enhance our product offerings, leading to a significant increase in user engagement and revenue.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Testimonial End -->
-
-
-        <!-- Contact Start -->
-        <div class="container-fluid py-5 mb-5">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Get In Touch</h5>
-                    <h1 class="mb-3">Contact for any query</h1>
-                    <p class="mb-2">Have questions or need assistance? Don’t hesitate to reach out to us! Our dedicated team is excited to help you with any queries you may have. Your feedback and inquiries are what drive us to improve and innovate! Contact us today and let’s embark on this journey together. We can’t wait to hear from you! 💬✨</a>.</p>
-                </div>
-                <div class="contact-detail position-relative p-5">
-                    <div class="row g-5 mb-5 justify-content-center">
-                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                            <div class="d-flex bg-light p-3 rounded">
-                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
-                                    <i class="fas fa-map-marker-alt text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h4 class="text-primary">Address</h4>
-                                    <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">Dhaka, Bangladesh</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                            <div class="d-flex bg-light p-3 rounded">
-                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
-                                    <i class="fa fa-phone text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h4 class="text-primary">Call Us</h4>
-                                    <a class="h5" href="tel:+8801701013856" target="_blank">+88-017-0101-3856</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
-                            <div class="d-flex bg-light p-3 rounded">
-                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
-                                    <i class="fa fa-envelope text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h4 class="text-primary">Email Us</h4>
-                                    <a class="h5" href="mailto:info@thunderapps.xyz" target="_blank">info@thunderapps.xyz</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row g-5">
-                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                            <div class="p-5 h-100 rounded contact-map">
-                                <iframe class="rounded w-100 h-100" src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8924752208286!2d90.41397337512856!3d23.786842978645566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a1e4908ff1%3A0x6f41fd24a2eef843!2sSimpletree%20Anarkali!5e0!3m2!1sen!2sbd!4v1727163944293!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                            <div class="p-5 rounded contact-form">
-                                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfqOCi3aeuZQW0Jf4jQSG-3lDx2yjbjdF6m6r8yvZL564441A/viewform?embedded=true" width="500" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-        </div>
-        <!-- Contact End -->
-
-
-        <!-- Footer Start -->
-         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
-            <div class="container pt-5 pb-4">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <a href="index.html">
-                            <h1 class="text-white fw-bold d-block">Thunder<span class="text-secondary">Apps Studio</span> </h1>
-                        </a>
-                        <p class="mt-4 text-light">Thunder Apps Studio delivers innovative, user-friendly mobile apps for iOS. Specializing in custom solutions, we create high-quality apps tailored to meet your business needs, ensuring seamless design and exceptional user experiences.</p>
-                        <div class="d-flex hightech-link">
-                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
-                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
-                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
-                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="h3 text-secondary">Short Link</a>
-                        <div class="mt-4 d-flex flex-column short-link">
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact us</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Services</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Projects</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Latest Blog</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="h3 text-secondary">Help Link</a>
-                        <div class="mt-4 d-flex flex-column help-link">
-                            <a href="terms.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Terms and Conditions</a>
-                            <a href="privacy.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Privacy Policy</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Helps</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>FQAs</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="h3 text-secondary">Contact Us</a>
-                        <div class="text-white mt-4 d-flex flex-column contact-link">
-                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Dhaka, Bangladesh</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> +88-017-0101-3856</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> info@thunderapps.xyz</a>
-                        </div>
-                    </div>
-                </div>
-                <hr class="text-light mt-5 mb-4">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start">
-                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Thunder Apps Studio</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
-
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <script src="js/site.js" defer></script>
+    <!-- /site:footer -->
+</body>
 
 </html>

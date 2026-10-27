@@ -19,18 +19,67 @@
       "DocSnapper turns your iPhone into a full document scanner. Point the camera at a page and DocSnapper finds the edges, flattens the perspective and cleans up the image, then lets you sign it, redact it, run text recognition on it and export a sharp PDF.",
       "It's built entirely on Apple's own Vision and VisionKit frameworks. Your documents are scanned, processed and stored on your device."
     ],
-    "highlights": ["Processed on your device", "18 cleanup filters", "PDF, PNG, JPG & TXT export", "10+ languages"],
-    "features": [
-      {"icon": "fa-camera", "title": "Scan and import", "text": "Multi-page capture with automatic edge detection, auto-crop and perspective correction. Import photos, PDFs and images from Files."},
-      {"icon": "fa-magic", "title": "18 cleanup filters", "text": "Magic Color, Deep B&W, De-shadow, Whiteboard, Denoise, Sharpen and more, tuned for paper, receipts, whiteboards and handwriting."},
-      {"icon": "fa-pen-nib", "title": "A real editor", "text": "Sign, mark up, permanently hide sensitive info, add form marks, stamps and watermarks, change page size and fix curved pages."},
-      {"icon": "fa-font", "title": "Text recognition (OCR)", "text": "Pull the text out of any scan, read it full screen, copy or share it, or export a whole folder as a text file."},
-      {"icon": "fa-exchange-alt", "title": "Replace text in a scan", "text": "Swap individual words in place. The patch matches the paper and ink color so the correction blends into the page."},
-      {"icon": "fa-folder-open", "title": "Stay organized", "text": "Folders with search, sorting and drag to reorder. Every edit is non-destructive, so your original scan is always kept."},
-      {"icon": "fa-share-square", "title": "Export and share", "text": "PDF, PNG, JPG and TXT with compression controls and a live file-size estimate. Send to Files, Mail, Dropbox or any app."},
-      {"icon": "fa-cloud", "title": "iCloud sync", "text": "Your folders follow you to every device signed in to the same Apple Account, through your own private iCloud Drive."}
+    "highlights": [
+      "Processed on your device",
+      "18 cleanup filters",
+      "PDF, PNG, JPG & TXT export",
+      "10+ languages"
     ],
-    "note": ""
+    "features": [
+      {
+        "icon": "fa-camera",
+        "title": "Scan and import",
+        "text": "Multi-page capture with automatic edge detection, auto-crop and perspective correction. Import photos, PDFs and images from Files."
+      },
+      {
+        "icon": "fa-magic",
+        "title": "18 cleanup filters",
+        "text": "Magic Color, Deep B&W, De-shadow, Whiteboard, Denoise, Sharpen and more, tuned for paper, receipts, whiteboards and handwriting."
+      },
+      {
+        "icon": "fa-pen-nib",
+        "title": "A real editor",
+        "text": "Sign, mark up, permanently hide sensitive info, add form marks, stamps and watermarks, change page size and fix curved pages."
+      },
+      {
+        "icon": "fa-font",
+        "title": "Text recognition (OCR)",
+        "text": "Pull the text out of any scan, read it full screen, copy or share it, or export a whole folder as a text file."
+      },
+      {
+        "icon": "fa-exchange-alt",
+        "title": "Replace text in a scan",
+        "text": "Swap individual words in place. The patch matches the paper and ink color so the correction blends into the page."
+      },
+      {
+        "icon": "fa-folder-open",
+        "title": "Stay organized",
+        "text": "Folders with search, sorting and drag to reorder. Every edit is non-destructive, so your original scan is always kept."
+      },
+      {
+        "icon": "fa-share-square",
+        "title": "Export and share",
+        "text": "PDF, PNG, JPG and TXT with compression controls and a live file-size estimate. Send to Files, Mail, Dropbox or any app."
+      },
+      {
+        "icon": "fa-cloud",
+        "title": "iCloud sync",
+        "text": "Your folders follow you to every device signed in to the same Apple Account, through your own private iCloud Drive."
+      }
+    ],
+    "note": "",
+    "inside": [
+      {
+        "title": "Turn a crumpled receipt into a clean PDF",
+        "text": "Point your camera and DocSnapper finds the edges, flattens the page and cleans it up, ready to save or send.",
+        "stat": "18 cleanup filters"
+      },
+      {
+        "title": "Sign and redact before you send",
+        "text": "Add your signature, permanently hide sensitive details and export the result in the format you need.",
+        "stat": "PDF, PNG, JPG & TXT"
+      }
+    ]
   },
   {
     "slug": "cocktale",
@@ -52,18 +101,67 @@
       "Looking for cocktail recipes, mocktail recipes, or non-alcoholic drink ideas? Cocktale helps you discover drinks for every occasion while giving you an easy way to track your alcohol consumption.",
       "Whether you're a cocktail enthusiast, a mocktail lover, or simply want to be more mindful of your drinking, Cocktale gives you a simple way to explore, save, and track your drinks."
     ],
-    "highlights": ["Classics and new drinks", "Mocktails and alcohol-free ideas", "Personal drink tracker", "New recipes added regularly"],
-    "features": [
-      {"icon": "fa-cocktail", "title": "Cocktail recipes", "text": "Discover recipes across different spirits, flavors and drink styles. Find the classics, explore new drinks and save the ones you love."},
-      {"icon": "fa-glass-whiskey", "title": "Mocktail recipes", "text": "Delicious mocktails and non-alcoholic drinks for when you want great flavor without the alcohol."},
-      {"icon": "fa-chart-bar", "title": "Consumption tracker", "text": "Keep a personal record of the drinks you have and build awareness of your drinking habits."},
-      {"icon": "fa-sliders-h", "title": "Discover by preference", "text": "Browse by type, flavor, spirit and occasion to find exactly what you're in the mood for."},
-      {"icon": "fa-heart", "title": "Save favorites", "text": "Keep your favorite cocktail and mocktail recipes one tap away."},
-      {"icon": "fa-layer-group", "title": "Collections", "text": "Organize drinks into collections that make sense for you: party menus, summer drinks, weeknight classics."},
-      {"icon": "fa-share-alt", "title": "Share recipes", "text": "Send your favorite recipes to friends and family."},
-      {"icon": "fa-lightbulb", "title": "Fresh inspiration", "text": "New recipes arrive regularly, so there's always something worth trying."}
+    "highlights": [
+      "Classics and new drinks",
+      "Mocktails and alcohol-free ideas",
+      "Personal drink tracker",
+      "New recipes added regularly"
     ],
-    "note": "Cocktale is intended for adults of legal drinking age. Please drink responsibly."
+    "features": [
+      {
+        "icon": "fa-cocktail",
+        "title": "Cocktail recipes",
+        "text": "Discover recipes across different spirits, flavors and drink styles. Find the classics, explore new drinks and save the ones you love."
+      },
+      {
+        "icon": "fa-glass-whiskey",
+        "title": "Mocktail recipes",
+        "text": "Delicious mocktails and non-alcoholic drinks for when you want great flavor without the alcohol."
+      },
+      {
+        "icon": "fa-chart-bar",
+        "title": "Consumption tracker",
+        "text": "Keep a personal record of the drinks you have and build awareness of your drinking habits."
+      },
+      {
+        "icon": "fa-sliders-h",
+        "title": "Discover by preference",
+        "text": "Browse by type, flavor, spirit and occasion to find exactly what you're in the mood for."
+      },
+      {
+        "icon": "fa-heart",
+        "title": "Save favorites",
+        "text": "Keep your favorite cocktail and mocktail recipes one tap away."
+      },
+      {
+        "icon": "fa-layer-group",
+        "title": "Collections",
+        "text": "Organize drinks into collections that make sense for you: party menus, summer drinks, weeknight classics."
+      },
+      {
+        "icon": "fa-share-alt",
+        "title": "Share recipes",
+        "text": "Send your favorite recipes to friends and family."
+      },
+      {
+        "icon": "fa-lightbulb",
+        "title": "Fresh inspiration",
+        "text": "New recipes arrive regularly, so there's always something worth trying."
+      }
+    ],
+    "note": "Cocktale is intended for adults of legal drinking age. Please drink responsibly.",
+    "inside": [
+      {
+        "title": "Mix something new from your home bar",
+        "text": "Browse cocktails by spirit, flavor and occasion, save your favorites and group them into collections.",
+        "stat": "Cocktails & mocktails"
+      },
+      {
+        "title": "Keep an eye on what you drink",
+        "text": "Log your drinks in a personal tracker and find alcohol-free ideas for nights you'd rather skip it.",
+        "stat": "Personal drink tracker"
+      }
+    ]
   },
   {
     "slug": "flirtwise",
@@ -85,18 +183,67 @@
       "FlirtWise is your AI wingman for dating apps. It helps you know exactly what to say, whoever you're talking to.",
       "Stuck on a reply? Staring at a profile with no idea how to start? Paste a chat or drop in a screenshot and FlirtWise gives you three ready-to-send messages in the vibe you choose."
     ],
-    "highlights": ["3 free AI replies to start", "Screenshots read on your device", "18 languages", "Built for everyone"],
-    "features": [
-      {"icon": "fa-reply", "title": "Reply", "text": "Paste a conversation or upload screenshots and get 3 natural replies. Pick a vibe, copy your favorite, or ask for more like it."},
-      {"icon": "fa-comment-dots", "title": "Openers", "text": "Turn a profile, bio or prompt into 3 openers that beat \"hey\", each with a note on why it works."},
-      {"icon": "fa-star", "title": "Profile glow-up", "text": "Get a 0–100 score for your bio and prompts, 3 clear fixes and a rewritten version you can use right away."},
-      {"icon": "fa-user-friends", "title": "Match actions", "text": "Save matches, then reply, revive a quiet chat, ask them out or get date ideas, all kept in that match's history."},
-      {"icon": "fa-robot", "title": "AI wingman chat", "text": "Keep a running conversation with your wingman, decode a confusing message and get quick reply options."},
-      {"icon": "fa-book-open", "title": "Guides and tips", "text": "21 short guides and 60 practical tips on openers, conversation flow, asking out, confidence and respect."},
-      {"icon": "fa-users", "title": "Built for everyone", "text": "Men, women, non-binary and LGBTQ+ users alike. It respects pronouns and adapts to each dating app's culture."},
-      {"icon": "fa-user-shield", "title": "Your data, your choice", "text": "FlirtWise asks before any text is sent to an AI provider, and you can turn AI processing off at any time."}
+    "highlights": [
+      "3 free AI replies to start",
+      "Screenshots read on your device",
+      "18 languages",
+      "Built for everyone"
     ],
-    "note": "FlirtWise is not affiliated with or endorsed by Tinder, Hinge, Bumble, Grindr, HER, Feeld, Raya or any other dating app."
+    "features": [
+      {
+        "icon": "fa-reply",
+        "title": "Reply",
+        "text": "Paste a conversation or upload screenshots and get 3 natural replies. Pick a vibe, copy your favorite, or ask for more like it."
+      },
+      {
+        "icon": "fa-comment-dots",
+        "title": "Openers",
+        "text": "Turn a profile, bio or prompt into 3 openers that beat \"hey\", each with a note on why it works."
+      },
+      {
+        "icon": "fa-star",
+        "title": "Profile glow-up",
+        "text": "Get a 0–100 score for your bio and prompts, 3 clear fixes and a rewritten version you can use right away."
+      },
+      {
+        "icon": "fa-user-friends",
+        "title": "Match actions",
+        "text": "Save matches, then reply, revive a quiet chat, ask them out or get date ideas, all kept in that match's history."
+      },
+      {
+        "icon": "fa-robot",
+        "title": "AI wingman chat",
+        "text": "Keep a running conversation with your wingman, decode a confusing message and get quick reply options."
+      },
+      {
+        "icon": "fa-book-open",
+        "title": "Guides and tips",
+        "text": "21 short guides and 60 practical tips on openers, conversation flow, asking out, confidence and respect."
+      },
+      {
+        "icon": "fa-users",
+        "title": "Built for everyone",
+        "text": "Men, women, non-binary and LGBTQ+ users alike. It respects pronouns and adapts to each dating app's culture."
+      },
+      {
+        "icon": "fa-user-shield",
+        "title": "Your data, your choice",
+        "text": "FlirtWise asks before any text is sent to an AI provider, and you can turn AI processing off at any time."
+      }
+    ],
+    "note": "FlirtWise is not affiliated with or endorsed by Tinder, Hinge, Bumble, Grindr, HER, Feeld, Raya or any other dating app.",
+    "inside": [
+      {
+        "title": "Open with something better than “hey”",
+        "text": "Drop in a profile or prompt and get openers you can send, each with a note on why it works.",
+        "stat": "3 openers per profile"
+      },
+      {
+        "title": "Get unstuck on a reply",
+        "text": "Paste the chat or add screenshots, pick a vibe and choose from ready-to-send replies.",
+        "stat": "18 languages"
+      }
+    ]
   },
   {
     "slug": "wealthwise",
@@ -118,17 +265,66 @@
       "Master your money and achieve your financial goals with WealthWise, the simple, private, all-in-one budget and expense tracker that works entirely on your device.",
       "Whether you're saving for a goal, trying to cut spending, or simply want to understand where your money goes, WealthWise gives you the tools to take control."
     ],
-    "highlights": ["No account required", "No bank linking", "Data stays on your device", "iCloud sync across devices"],
-    "features": [
-      {"icon": "fa-receipt", "title": "Expense logging", "text": "Log unlimited transactions and see a clear monthly overview of where your money goes."},
-      {"icon": "fa-heartbeat", "title": "Financial Health Score", "text": "One number tracking savings rate, budget discipline, spending steadiness and income, showing what's holding you back."},
-      {"icon": "fa-chart-line", "title": "Month-end forecast", "text": "See where your spending lands before the month is over, including recurring bills that haven't been charged yet."},
-      {"icon": "fa-bell", "title": "What Changed", "text": "Spots when a category runs hot, a charge is unusually large, or something new appears, with a next step attached."},
-      {"icon": "fa-redo", "title": "Subscription audit", "text": "Finds charges that quietly repeat, even ones you never labelled, and shows what each really costs per year."},
-      {"icon": "fa-bullseye", "title": "Goal planner", "text": "Set a savings target and instantly see whether it's realistic, plus a plan for exactly where the money comes from."},
-      {"icon": "fa-comments", "title": "Ask WealthWise", "text": "Ask any question about your spending in plain English and get answers from your real transactions."},
-      {"icon": "fa-file-export", "title": "Reports and export", "text": "Full monthly reports, 6-month trends, bill reminders, home screen widgets and CSV or PDF export with WealthWise PRO."}
+    "highlights": [
+      "No account required",
+      "No bank linking",
+      "Data stays on your device",
+      "iCloud sync across devices"
     ],
-    "note": ""
+    "features": [
+      {
+        "icon": "fa-receipt",
+        "title": "Expense logging",
+        "text": "Log unlimited transactions and see a clear monthly overview of where your money goes."
+      },
+      {
+        "icon": "fa-heartbeat",
+        "title": "Financial Health Score",
+        "text": "One number tracking savings rate, budget discipline, spending steadiness and income, showing what's holding you back."
+      },
+      {
+        "icon": "fa-chart-line",
+        "title": "Month-end forecast",
+        "text": "See where your spending lands before the month is over, including recurring bills that haven't been charged yet."
+      },
+      {
+        "icon": "fa-bell",
+        "title": "What Changed",
+        "text": "Spots when a category runs hot, a charge is unusually large, or something new appears, with a next step attached."
+      },
+      {
+        "icon": "fa-redo",
+        "title": "Subscription audit",
+        "text": "Finds charges that quietly repeat, even ones you never labelled, and shows what each really costs per year."
+      },
+      {
+        "icon": "fa-bullseye",
+        "title": "Goal planner",
+        "text": "Set a savings target and instantly see whether it's realistic, plus a plan for exactly where the money comes from."
+      },
+      {
+        "icon": "fa-comments",
+        "title": "Ask WealthWise",
+        "text": "Ask any question about your spending in plain English and get answers from your real transactions."
+      },
+      {
+        "icon": "fa-file-export",
+        "title": "Reports and export",
+        "text": "Full monthly reports, 6-month trends, bill reminders, home screen widgets and CSV or PDF export with WealthWise PRO."
+      }
+    ],
+    "note": "",
+    "inside": [
+      {
+        "title": "See where your money goes",
+        "text": "Log your spending and get a Financial Health Score plus a forecast of where the month will land.",
+        "stat": "No bank linking"
+      },
+      {
+        "title": "Find the subscriptions you forgot",
+        "text": "WealthWise spots charges that quietly repeat and shows what each one really costs per year.",
+        "stat": "No account needed"
+      }
+    ]
   }
 ]

@@ -491,7 +491,7 @@ def apps_page(apps):
         <div class="wrap page-head">
             {crumbs([("Home", "index.html"), ("Apps", None)])}
             <h1 class="page-title">Our Apps</h1>
-            <p class="page-lead">Thoughtfully designed iPhone apps for getting things done, managing money, paying off debt, mixing drinks and dating with confidence.</p>
+            <p class="page-lead">Thoughtfully designed iPhone apps for getting things done, managing money, paying off debt, caring for pets, mixing drinks and dating with confidence.</p>
         </div>
 
         <section class="section" aria-label="Apps on the App Store">

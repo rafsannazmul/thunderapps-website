@@ -82,6 +82,88 @@
     ]
   },
   {
+    "slug": "pawpass",
+    "name": "PawPass",
+    "storeName": "PawPass - Pet Care Passport",
+    "subtitle": "Share Your Pet's Care Plan",
+    "category": "Lifestyle",
+    "appId": "6809957284",
+    "storeUrl": "https://apps.apple.com/us/app/pawpass-pet-care-passport/id6809957284",
+    "accent": "#0C8076",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2c/46/46/2c46469b-b9e4-b80d-4b3d-998b1640105e/Placeholder.mill/400x400Icon.ApSiOS01-75.webp",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/81/e1/a2/81e1a264-4769-531d-ec69-7b0401171996/03.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/35/40/5f/35405fba-1b9b-6861-ef45-687547a75807/01.png/600x1300bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e6/49/2d/e6492d42-40d2-8fe1-fb27-44a151cfaa57/02.png/600x1300bb.webp"
+    ],
+    "summary": "Everything your pet sitter needs in one simple care passport. Share a live link or PDF with feeding, meds, vet info, routines and emergency contacts.",
+    "intro": [
+      "PawPass creates a simple, shareable care passport for your dog, cat or any pet, so family, friends, pet sitters, dog walkers and boarding facilities know exactly what to do.",
+      "Feeding routines, medications, vet details, emergency contacts, behavior notes and house rules are kept together and easy to find, so your pet's routine doesn't get lost when someone else is looking after them."
+    ],
+    "highlights": [
+      "Live link or printable PDF",
+      "No app needed to view",
+      "One-time purchase, no subscription",
+      "9 languages"
+    ],
+    "features": [
+      {
+        "icon": "fa-utensils",
+        "title": "Feeding schedule",
+        "text": "Feeding times and portions, written down once so every caregiver gets it right."
+      },
+      {
+        "icon": "fa-pills",
+        "title": "Medications",
+        "text": "Doses and timing for every medication, alongside allergies and special care instructions."
+      },
+      {
+        "icon": "fa-clinic-medical",
+        "title": "Vet and emergency contacts",
+        "text": "Your veterinarian, clinic details and emergency contacts, easy to find when it matters."
+      },
+      {
+        "icon": "fa-paw",
+        "title": "Routines and house rules",
+        "text": "Daily routines, behavior and personality notes, and the rules of your home."
+      },
+      {
+        "icon": "fa-link",
+        "title": "Share a live link",
+        "text": "Send a web link anyone can open with no app needed. Edit anytime and the link updates automatically."
+      },
+      {
+        "icon": "fa-file-pdf",
+        "title": "Printable PDF",
+        "text": "Export a clean, printable PDF of your pet's care passport to print or send."
+      },
+      {
+        "icon": "fa-dog",
+        "title": "One passport per pet",
+        "text": "Create a PawPass for each of your pets, so every caregiver knows exactly who needs what."
+      },
+      {
+        "icon": "fa-infinity",
+        "title": "Pay once, yours forever",
+        "text": "Unlock PawPass Lifetime with a single one-time purchase. No subscription and no recurring charges."
+      }
+    ],
+    "note": "PawPass care sheets are a convenience, not a substitute for advice from a veterinarian.",
+    "inside": [
+      {
+        "title": "Hand your sitter everything in one link",
+        "text": "Share feeding, meds, vet details and emergency contacts as a live link that updates whenever you edit it.",
+        "stat": "No app needed to view"
+      },
+      {
+        "title": "Stop answering the same questions",
+        "text": "Put your pet's routine, house rules and behavior notes in one care passport before you leave.",
+        "stat": "Pay once, no subscription"
+      }
+    ]
+  },
+  {
     "slug": "docsnapper",
     "name": "DocSnapper",
     "storeName": "DocSnapper: PDF Scanner & OCR",

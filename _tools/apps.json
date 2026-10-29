@@ -326,5 +326,87 @@
         "stat": "No account needed"
       }
     ]
+  },
+  {
+    "slug": "debttracker",
+    "name": "DebtTracker",
+    "storeName": "DebtTracker: Debt Payoff Plan",
+    "subtitle": "Snowball & Avalanche Planner",
+    "category": "Finance",
+    "appId": "6818932784",
+    "storeUrl": "https://apps.apple.com/us/app/debttracker-debt-payoff-plan/id6818932784",
+    "accent": "#047857",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/39/dd/00/39dd002f-397f-485c-7346-052cabdcca2a/Placeholder.mill/400x400Icon.ApSiOS01-75.webp",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/63/bc/51/63bc516d-4df8-1bdd-7ad3-aa32e2a48e40/01-debt-free-date.png/600x1334bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cc/cf/12/cccf12ab-1d18-f7ad-cfb4-f905d06705e4/02-snowball-vs-avalanche.png/600x1334bb.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/b8/16/c7b816df-b62d-51ff-92a1-a89c0d60835c/03-pay-extra.png/600x1334bb.webp"
+    ],
+    "summary": "See your exact debt-free date. Compare Snowball and Avalanche, track IOUs with friends, and watch every payment pull the date closer.",
+    "intro": [
+      "DebtTracker turns your debts into a clear plan and a real debt-free date. Add your credit cards, loans and Buy Now Pay Later balances in seconds, and DebtTracker builds your payoff plan, shows exactly when you'll be debt-free, and moves that date closer with every payment you log.",
+      "It's private by design: no bank login, no account and no ads. Your numbers stay on your iPhone, and optional iCloud sync uses your own private iCloud database."
+    ],
+    "highlights": [
+      "No bank login",
+      "No account, no ads",
+      "Data stays on your iPhone",
+      "20 languages"
+    ],
+    "features": [
+      {
+        "icon": "fa-calendar-check",
+        "title": "Your debt-free date",
+        "text": "Add credit cards, loans and Buy Now Pay Later balances in seconds and see exactly when you'll be debt-free."
+      },
+      {
+        "icon": "fa-balance-scale",
+        "title": "Snowball vs Avalanche",
+        "text": "Pay the highest interest first to save the most, or the smallest balance first for quick wins. Compare both on your own numbers."
+      },
+      {
+        "icon": "fa-sliders-h",
+        "title": "Payoff Time Machine",
+        "text": "Slide to add a little extra each month and watch your date and interest saved update instantly. Plan for refunds, bonuses and raises too."
+      },
+      {
+        "icon": "fa-flask",
+        "title": "What-if Lab",
+        "text": "Test a consolidation loan or a 0% balance transfer before you sign, and see whether it really saves you money."
+      },
+      {
+        "icon": "fa-handshake",
+        "title": "IOUs with friends",
+        "text": "Record who owes whom for dinners, rent and family loans, and send a polite reminder in one tap."
+      },
+      {
+        "icon": "fa-bell",
+        "title": "Stay on track",
+        "text": "Gentle due-date and payday reminders, plus milestones and shareable progress cards to keep you going."
+      },
+      {
+        "icon": "fa-mobile-alt",
+        "title": "Widgets and Siri",
+        "text": "Keep your progress in view with Home Screen and Lock Screen widgets, and check in with Siri."
+      },
+      {
+        "icon": "fa-star",
+        "title": "DebtTracker PRO",
+        "text": "Unlimited debts and IOUs, custom strategies, 0% promo rates, statement scan, payment calendar, PDF reports, AI Debt Coach and CSV export."
+      }
+    ],
+    "note": "DebtTracker is a planning tool and does not provide financial, tax or legal advice. Payoff dates and interest savings are estimates.",
+    "inside": [
+      {
+        "title": "See the exact day you'll be debt-free",
+        "text": "Add your cards and loans, pick Snowball or Avalanche, and watch every payment pull your date closer.",
+        "stat": "Snowball & Avalanche"
+      },
+      {
+        "title": "See what a little extra each month does",
+        "text": "Slide in an extra payment and watch your debt-free date and the interest you save update instantly.",
+        "stat": "No bank login"
+      }
+    ]
   }
 ]

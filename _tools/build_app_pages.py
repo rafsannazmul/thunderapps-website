@@ -344,7 +344,7 @@ def product_page(app, apps):
     shots = "\n".join(
         f'                    <li><img src="{e(src)}" alt="{e(app["name"])} screenshot {i + 1}" width="600" height="1300" '
         f'{"" if i == 0 else lazy}decoding="async"></li>'
-        for i, src in enumerate(app["screenshots"]))
+        for i, src in enumerate(app["screenshots"][:3]))
     intro = "\n".join(f'                        <p>{e(p)}</p>' for p in app["intro"])
     highlights = "\n".join(
         f'                        <li><i class="fas fa-check-circle" aria-hidden="true"></i>{e(h)}</li>'
@@ -439,6 +439,8 @@ def product_page(app, apps):
                     <div><dt>Price</dt><dd>Free</dd></div>
                     <div><dt>In-App Purchases</dt><dd>Yes</dd></div>
                     <div><dt>App Store</dt><dd><a href="{e(app['storeUrl'])}" target="_blank" rel="noopener">View on the App Store</a></dd></div>
+                    <div><dt>Terms of Use</dt><dd><a href="terms.html">Terms and Conditions</a></dd></div>
+                    <div><dt>Privacy</dt><dd><a href="privacy.html">Privacy Policy</a></dd></div>
                 </dl>
                 {note}
             </div>
@@ -489,7 +491,7 @@ def apps_page(apps):
         <div class="wrap page-head">
             {crumbs([("Home", "index.html"), ("Apps", None)])}
             <h1 class="page-title">Our Apps</h1>
-            <p class="page-lead">Thoughtfully designed iPhone apps for getting things done, managing money, mixing drinks and dating with confidence.</p>
+            <p class="page-lead">Thoughtfully designed iPhone apps for getting things done, managing money, paying off debt, mixing drinks and dating with confidence.</p>
         </div>
 
         <section class="section" aria-label="Apps on the App Store">
